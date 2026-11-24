@@ -1,0 +1,47 @@
+schema_version: 1
+template:
+  id: slide-to-verify
+  gate_type: interaction
+  version: 0.2.0
+  completion_condition: drag-handle-to-configured-track-threshold-and-release
+  parameters:
+    completion_percent:
+      default: 94
+      accepted_range: [80, 100]
+      unit: percent
+      meaning: minimum horizontal track progress required when the pointer is released
+references:
+  - local_item_id: 20260901T063547Z-pfpt-fig12-slider-verification-6dfce79d
+    publisher: Proofpoint
+    title: "TA4922: The Suspected Chinese Crime Group is Going Global"
+    url: https://www.proofpoint.com/us/blog/threat-insight/ta4922-suspected-chinese-crime-group-going-global
+    locator: "Figure 12: CAPTCHA-style verification gate on the initial landing page"
+    observed_pattern: centered identity-verification card with a horizontal drag slider
+  - local_item_id: 20260901T065228Z-xorlab-fig-collage-multi-gate-verification-collage-fcd8c394
+    publisher: xorlab
+    title: "Abusing Adobe and QR Links for AITM Microsoft 365 Phishing"
+    url: https://www.xorlab.com/en/blog/abusing-adobe-and-qr-links-for-aitm-microsoft-365-phishing
+    locator: "verification steps collage: slide-to-verify panel"
+    observed_pattern: account-protection explanation followed by a thin slide-to-verify control
+design_translation:
+  retained_patterns:
+    - dark low-detail page background that visually isolates one verification card
+    - short human-verification heading and automation-protection explanation
+    - round left-hand handle, horizontal progress track, and clear rightward direction
+    - success state displayed before navigation
+  local_adaptations:
+    - annotation-derived brand context with neutral fallback wording
+    - generic shield mark and an original green-gray palette instead of copied brand assets
+    - responsive local-only Vue and CSS implementation with pointer capture for mouse, pen, and touch
+    - configurable numeric completion threshold for reproducible experiments
+runtime_behavior:
+  - pointerdown on the round handle begins the drag
+  - pointermove updates bounded horizontal progress without recording coordinates
+  - pointerup at or beyond completion_percent invokes the Interaction completion handler once
+  - pointerup below the threshold, pointer cancellation, or lost capture resets the handle
+  - successful completion returns to the opaque token's original kit path
+excluded_behaviors:
+  - credential, email, payment, or personal-data collection
+  - CAPTCHA scoring, fingerprinting, pointer-coordinate logging, or behavioral telemetry
+  - third-party scripts, analytics, trackers, copied logos, and external form actions
+  - ClickFix instructions, clipboard use, command execution, and native permission prompts

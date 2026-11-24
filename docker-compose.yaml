@@ -1,0 +1,298 @@
+name: phishgate
+
+x-backend-common: &backend-common
+  build:
+    context: .
+    dockerfile: backend/Dockerfile
+    target: runtime
+  environment:
+    PHISHGATE_UPSTREAM: ${PHISHGATE_UPSTREAM:-http://phishdecloaker-kits:80}
+    PHISHGATE_DYNAPD_UPSTREAM: http://dynapd-kits:80
+    PHISHGATE_DYNAPD_SELECTION: /app/data/dynapd/selection.csv
+    PHISHGATE_BRAND_ANNOTATION: /app/data/phishdecloaker/kit_brand_annotation.csv
+    # Separately maintained "manual" dataset (data/manual/) -- its own CSV and
+    # its own samples mount, kept independent from the phishdecloaker lines
+    # above. See data/manual/README.md.
+    PHISHGATE_MANUAL_ANNOTATION: /app/data/manual/manual_annotation.csv
+    PHISHGATE_MANUAL_BENIGN_ANNOTATION: /app/data/manual/manual_benign_annotation.csv
+    PHISHGATE_MANUAL_SAMPLES: /app/data/manual/samples
+    PHISHGATE_CONFIG: /app/config/profiles.yaml
+    PHISHGATE_PROFILE: ${PHISHGATE_PROFILE:-click}
+    PHISHGATE_RUN_LABEL: ${PHISHGATE_RUN_LABEL:-}
+    PHISHGATE_EXPERIMENT_MANIFEST: ${PHISHGATE_EXPERIMENT_MANIFEST:-}
+    PHISHGATE_SEED: ${PHISHGATE_SEED:?Set one private PHISHGATE_SEED in .env}
+    PHISHGATE_LOG_DIR: /app/logs
+  depends_on:
+    phishdecloaker-kits:
+      condition: service_healthy
+  volumes:
+    - ./data/kit_brand_annotation.csv:/app/data/phishdecloaker/kit_brand_annotation.csv:ro
+    - ./data/manual_annotation.csv:/app/data/manual/manual_annotation.csv:ro
+    - ./data/manual_benign_annotation.csv:/app/data/manual/manual_benign_annotation.csv:ro
+    - ./data/manual/samples:/app/data/manual/samples:ro
+    - ./data/private/dynapd/selection.csv:/app/data/dynapd/selection.csv:ro
+    - ./config:/app/config:ro
+    - ./targets:/app/targets:ro
+    - ./logs:/app/logs:rw
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  expose:
+    - "8000"
+  healthcheck:
+    test:
+      - CMD
+      - python
+      - -c
+      - >-
+        import urllib.request;
+        from app.runtime_config import derive_route_prefix;
+        from app.seeding import master_seed;
+        prefix = derive_route_prefix(master_seed());
+        urllib.request.urlopen(f"http://127.0.0.1:8000/{prefix}/health")
+    interval: 5s
+    timeout: 3s
+    retries: 5
+    start_period: 5s
+  networks:
+    default:
+      aliases:
+        - backend
+    phishdecloaker-internal:
+    dynapd-internal:
+
+services:
+  phishdecloaker-kits:
+    # Same PHP 7.4 built-in-server runtime as dynapd-kits and the Conda launcher,
+    # so Docker and Conda render kits identically. PHP 7.4 (the behavior of the
+    # original PHP 7.2 kit image, and the oldest release still on conda-forge
+    # for linux-64 -- macOS conda-forge builds start at 8.1, hence Node lives
+    # in a separate PhishGate-node environment) keeps a
+    # call to a disabled function or a write to the read-only tree a warning
+    # that the kit survives, instead of the fatal error PHP 8 raises.
+    # The kit files come from the extracted ZIP bind-mount below, not an image.
+    image: php:7.4.27-cli@sha256:880ee32e2dc8e58f52dbac065fd5e075abce455f4d17c0babd9e22339ff4062d
+    profiles:
+      - local
+      - prod
+    command:
+      - sh
+      - /opt/phishgate/start_phishdecloaker_php.sh
+    environment:
+      PHISHDECLOAKER_DOCROOT: /var/www/html
+      PHISHDECLOAKER_LISTEN_HOST: 0.0.0.0
+      PHISHDECLOAKER_LISTEN_PORT: "80"
+      PHISHGATE_PHP_SAFETY_INI: /usr/local/etc/php/conf.d/zz-phishgate-safety.ini
+      PHISHGATE_PHP_ROUTER: /opt/phishgate/router.php
+    expose:
+      - "80"
+    volumes:
+      - type: bind
+        source: ./data/private/phishdecloaker/extracted/src
+        target: /var/www/html
+        read_only: true
+        bind:
+          create_host_path: false
+      - ./tools/runtime/start_phishdecloaker_php.sh:/opt/phishgate/start_phishdecloaker_php.sh:ro
+      - ./tools/runtime/router.php:/opt/phishgate/router.php:ro
+      - ./tools/runtime/phishgate-safety.ini:/usr/local/etc/php/conf.d/zz-phishgate-safety.ini:ro
+    read_only: true
+    # The kit tree stays read-only. kit4's entry point copies def/ into a
+    # fresh a1b2c3/<md5>/ on every visit, so only that directory gets an
+    # in-memory overlay that disappears with the container. The mode must be
+    # exactly 0777: kit4's php_check.php refuses to run otherwise. (The Conda
+    # launcher instead serves a disposable copy of the whole tree.)
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+      - /var/www/html/kit4/a1b2c3:size=64m,mode=0777
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - test -f /var/www/html/kit1/index.php && test -f /var/www/html/kit100/index.php
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 2s
+    networks:
+      - phishdecloaker-internal
+
+  dynapd-kits:
+    image: php:7.4.27-cli@sha256:880ee32e2dc8e58f52dbac065fd5e075abce455f4d17c0babd9e22339ff4062d
+    profiles:
+      - local
+      - prod
+    command:
+      - sh
+      - /opt/phishgate/start_dynapd_php.sh
+    environment:
+      DYNAPD_DOCROOT: /srv/dynapd
+      DYNAPD_LISTEN_HOST: 0.0.0.0
+      DYNAPD_LISTEN_PORT: "80"
+      PHISHGATE_PHP_SAFETY_INI: /usr/local/etc/php/conf.d/zz-phishgate-safety.ini
+      PHISHGATE_PHP_ROUTER: /opt/phishgate/router.php
+    volumes:
+      - ./data/private/dynapd/raw_selected:/srv/dynapd:ro
+      - ./tools/runtime/start_dynapd_php.sh:/opt/phishgate/start_dynapd_php.sh:ro
+      - ./tools/runtime/router.php:/opt/phishgate/router.php:ro
+      - ./tools/runtime/phishgate-safety.ini:/usr/local/etc/php/conf.d/zz-phishgate-safety.ini:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    expose:
+      - "80"
+    logging:
+      driver: none
+    networks:
+      - dynapd-internal
+
+  backend-local:
+    <<: *backend-common
+    profiles:
+      - local
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --reload
+    volumes:
+      - ./backend/app:/app/app:ro
+      - ./data/kit_brand_annotation.csv:/app/data/phishdecloaker/kit_brand_annotation.csv:ro
+      - ./data/manual_annotation.csv:/app/data/manual/manual_annotation.csv:ro
+      - ./data/manual_benign_annotation.csv:/app/data/manual/manual_benign_annotation.csv:ro
+      - ./data/manual/samples:/app/data/manual/samples:ro
+      - ./data/private/dynapd/selection.csv:/app/data/dynapd/selection.csv:ro
+      - ./config:/app/config:ro
+      - ./targets:/app/targets:ro
+      - ./logs:/app/logs:rw
+
+  frontend-local:
+    profiles:
+      - local
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      target: development
+    depends_on:
+      backend-local:
+        condition: service_healthy
+    environment:
+      PHISHGATE_SEED: ${PHISHGATE_SEED:?Set one private PHISHGATE_SEED in .env}
+      PHISHGATE_DOMAIN_STYLE: ${PHISHGATE_DOMAIN_STYLE:-off}
+    ports:
+      - "${PHISHGATE_HOST:-127.0.0.1}:${PHISHGATE_PORT:-80}:5173"
+    volumes:
+      - ./frontend/index.html:/app/index.html:ro
+      - ./frontend/src:/app/src:ro
+      - ./frontend/tsconfig.json:/app/tsconfig.json:ro
+      - ./frontend/vite.config.ts:/app/vite.config.ts:ro
+
+  backend-prod:
+    <<: *backend-common
+    profiles:
+      - prod
+
+  frontend-prod:
+    profiles:
+      - prod
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      target: production
+    environment:
+      PHISHGATE_SEED: ${PHISHGATE_SEED:?Set one private PHISHGATE_SEED in .env}
+      PHISHGATE_DOMAIN_STYLE: ${PHISHGATE_DOMAIN_STYLE:-off}
+    depends_on:
+      backend-prod:
+        condition: service_healthy
+    ports:
+      - "${PHISHGATE_HOST:-127.0.0.1}:${PHISHGATE_PORT:-80}:80"
+
+  # --- Zero-download demo -------------------------------------------------
+  # `docker compose --profile demo up --build` runs PhishGate as a generic
+  # gate-injecting reverse proxy in front of a tiny static upstream, with no
+  # research datasets, no PHISHGATE_SEED in .env, and no dataset mounts.
+  demo-upstream:
+    profiles:
+      - demo
+    image: nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2
+    expose:
+      - "80"
+    volumes:
+      - ./demo/upstream:/usr/share/nginx/html:ro
+    networks:
+      demo-internal:
+
+  backend-demo:
+    profiles:
+      - demo
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      target: runtime
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    environment:
+      PHISHGATE_UPSTREAM: http://demo-upstream:80
+      PHISHGATE_GENERIC_UPSTREAM: "on"
+      PHISHGATE_UPSTREAM_ALLOWED_HOSTS: demo-upstream
+      PHISHGATE_SEED: ${PHISHGATE_SEED:-phishgate-demo}
+      PHISHGATE_PROFILE: ${PHISHGATE_PROFILE:-click}
+      PHISHGATE_CONFIG: /app/config/profiles.yaml
+      PHISHGATE_LOG_DIR: /app/logs
+    volumes:
+      - ./config:/app/config:ro
+      - ./logs:/app/logs:rw
+    expose:
+      - "8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          import urllib.request;
+          from app.runtime_config import derive_route_prefix;
+          from app.seeding import master_seed;
+          prefix = derive_route_prefix(master_seed());
+          urllib.request.urlopen(f"http://127.0.0.1:8000/{prefix}/health")
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    networks:
+      demo-internal:
+        aliases:
+          - backend
+
+  frontend-demo:
+    profiles:
+      - demo
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      target: production
+    environment:
+      PHISHGATE_SEED: ${PHISHGATE_SEED:-phishgate-demo}
+      PHISHGATE_DOMAIN_STYLE: ${PHISHGATE_DOMAIN_STYLE:-off}
+      PHISHGATE_GENERIC_UPSTREAM: "on"
+    depends_on:
+      backend-demo:
+        condition: service_healthy
+    ports:
+      - "${PHISHGATE_HOST:-127.0.0.1}:${PHISHGATE_PORT:-80}:80"
+    networks:
+      demo-internal:
+
+networks:
+  phishdecloaker-internal:
+    internal: true
+  dynapd-internal:
+    internal: true
+  demo-internal:

@@ -1,0 +1,66 @@
+#!/bin/sh
+# Sourced by the official Nginx entrypoint before template expansion.
+
+if [ -z "${PHISHGATE_SEED:-}" ]; then
+    echo "PHISHGATE_SEED must be set before starting Nginx." >&2
+    return 1
+fi
+
+route_seed="$(printf '%s' route | openssl dgst -sha256 -hmac "$PHISHGATE_SEED" | sed 's/^.* //')"
+PHISHGATE_ROUTE_PREFIX="$(printf '%s' "$route_seed" | sha256sum | cut -c1-12)"
+export PHISHGATE_ROUTE_PREFIX
+
+style="${PHISHGATE_DOMAIN_STYLE:-off}"
+case "$style" in
+    off)
+        PHISHGATE_LOCAL_DOMAIN=""
+        ;;
+    hash)
+        label="$(printf '%s' "${PHISHGATE_SEED}:domain-hash" | sha256sum | cut -c1-12)"
+        PHISHGATE_LOCAL_DOMAIN="${label}.com"
+        ;;
+    pronounceable)
+        digest="$(printf '%s' "${PHISHGATE_SEED}:domain-pronounceable" | sha256sum | cut -d' ' -f1)"
+        consonants="bcdfghjklmnpqrstvwxyz"
+        vowels="aeiou"
+        label=""
+        index=0
+        while [ "$index" -lt 9 ]; do
+            start=$((index * 2 + 1))
+            end=$((start + 1))
+            pair="$(printf '%s' "$digest" | cut -c"${start}-${end}")"
+            byte=$((0x$pair))
+            if [ $((index % 2)) -eq 0 ]; then
+                pool="$consonants"
+            else
+                pool="$vowels"
+            fi
+            position=$((byte % ${#pool} + 1))
+            label="${label}$(printf '%s' "$pool" | cut -c"$position")"
+            index=$((index + 1))
+        done
+        PHISHGATE_LOCAL_DOMAIN="${label}.com"
+        ;;
+    *)
+        # Keep in sync with DOMAIN_STYLES in backend/app/runtime_config.py
+        # (off/hash/pronounceable). The keyword style was removed because
+        # keyword domains leak phishing cues.
+        echo "Unsupported PHISHGATE_DOMAIN_STYLE: $style" >&2
+        return 1
+        ;;
+esac
+export PHISHGATE_LOCAL_DOMAIN
+
+# Own-host map body (see 00-map.conf.template). In normal (dataset) mode the
+# bare "/" on PhishGate's own host serves the SPA placeholder, so localhost /
+# 127.0.0.1 / the local domain are marked own-host. In generic mode the whole
+# operator upstream is gated at "/", so no host is "own" and every "/" request
+# is proxied to the backend (which injects the gate).
+if [ -n "${PHISHGATE_GENERIC_UPSTREAM:-}" ]; then
+    PHISHGATE_OWN_HOST_MAP=""
+else
+    PHISHGATE_OWN_HOST_MAP='"localhost" 1;
+    "127.0.0.1" 1;
+    "'"${PHISHGATE_LOCAL_DOMAIN}"'" 1;'
+fi
+export PHISHGATE_OWN_HOST_MAP

@@ -1,0 +1,54 @@
+schema_version: 1
+template:
+  id: terms-scroll
+  gate_type: interaction
+  version: 0.3.0
+  completion_condition: reach-scroll-threshold
+  parameters:
+    threshold_percent: 90
+references:
+  - local_item_id: 20260904T131213Z-u42-sofacy1-page-three-scroll-54c19a0f
+    publisher: Palo Alto Networks Unit 42
+    title: Sofacy Uses DealersChoice to Target European Government Agency
+    url: https://unit42.paloaltonetworks.com/unit42-sofacy-uses-dealerschoice-target-european-government-agency/
+    locator: Figure 1 and documented page-three viewport trigger
+    research_scope: document layout and scroll-to-page interaction
+  - local_item_id: 20260904T131214Z-itsolver-above-fold-scroll-hide-b2f70e41
+    publisher: IT Solver Support
+    title: Gmail Bounce Phishing Email Analysis
+    url: https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis
+    locator: above-the-fold mobile screenshot
+    research_scope: initially visible state before scrolling
+  - local_item_id: 20260904T131215Z-itsolver-below-fold-scroll-reveal-d8a41c36
+    publisher: IT Solver Support
+    title: Gmail Bounce Phishing Email Analysis
+    url: https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis
+    locator: below-the-fold mobile screenshot
+    research_scope: concealed content reached by scrolling
+  - publisher: SANS Internet Storm Center
+    title: Nice Phishing Sample Delivering Trickbot
+    url: https://isc.sans.edu/diary/23641
+    locator: fake PDF before scroll, window.onscroll handler, and after-scroll popup
+    research_scope: primary web-page behavior and PDF-viewer presentation
+    local_copy: unavailable-source-image-returns-404
+  - publisher: EURECOM
+    title: A Closer Look at Modern Evasive Phishing Emails
+    url: https://www.eurecom.eu/publication/8200/download/sec-publi-8200.pdf
+    locator: client-side user-interaction cloaking discussion
+    research_scope: expert classification of scrolling as a content-reveal interaction
+design_translation:
+  retained_patterns:
+    - a familiar document viewer provides the reason to scroll
+    - multiple document pages keep the gated state below the initial viewport
+    - a single measurable scroll threshold changes the state
+  local_adaptations:
+    - generic PDF toolbar and synthetic three-page document use local HTML and CSS
+    - current-page feedback replaces the conspicuous research progress bar
+    - annotation-derived service name uses a neutral document-service fallback
+    - completion opens the isolated upstream instead of a download or update lure
+excluded_behaviors:
+  - executable, plugin, or browser-update downloads
+  - fake browser chrome or address-bar impersonation
+  - credential, password, or submitted-value collection
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions

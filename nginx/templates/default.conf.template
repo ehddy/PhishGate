@@ -1,0 +1,59 @@
+server {
+    listen 80;
+    server_name localhost;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # The bare root is the SPA's own placeholder page only when the request
+    # is actually addressed to PhishGate's own host ($phishgate_is_own_host,
+    # from 00-map.conf.template). Any other Host at this same path is a
+    # Host-routed manual/benign sample's real domain (see
+    # data/manual/README.md) and must reach the backend instead -- that
+    # single conditional proxy_pass is the one safe use of `if` in a
+    # location block (no mixed rewrite/return branches).
+    location = / {
+        if ($phishgate_is_own_host = 0) {
+            proxy_pass http://backend:8000;
+        }
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        try_files /index.html =404;
+    }
+
+    location = /${PHISHGATE_ROUTE_PREFIX}/health {
+        proxy_pass http://backend:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ^~ /${PHISHGATE_ROUTE_PREFIX}/api/ {
+        proxy_pass http://backend:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # The Gate Host page lives at the bare prefix instead of a nested /ui/
+    # path — a literal "ui" segment reads as a dev-tool artifact, not a
+    # plausible real-site path. Its own built assets still live under this
+    # same prefix, so this must stay a lower priority than the exact
+    # /health and /api/ locations above (nginx always prefers an exact "="
+    # match and the longest "^~" prefix match, regardless of file order).
+    location = /${PHISHGATE_ROUTE_PREFIX}/ {
+        rewrite ^ /index.html break;
+    }
+
+    location ^~ /${PHISHGATE_ROUTE_PREFIX}/ {
+        rewrite ^/${PHISHGATE_ROUTE_PREFIX}/(.*)$ /$1 break;
+    }
+
+    location / {
+        proxy_pass http://backend:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

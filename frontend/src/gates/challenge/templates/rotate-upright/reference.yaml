@@ -1,0 +1,38 @@
+schema_version: 1
+template:
+  id: rotate-upright
+  gate_type: challenge
+  version: 0.3.0
+  completion_condition: rotate-image-to-server-validated-upright-step
+reference:
+  local_item_id: 20260901T045338Z-pd01-fig04-rotation
+  publisher: 33rd USENIX Security Symposium
+  title: "PhishDecloaker: Detecting CAPTCHA-cloaked Phishing Websites via Hybrid Vision-based Interactive Models"
+  url: https://www.usenix.org/conference/usenixsecurity24/presentation/teoh
+  locator: Figure 4 rotation crop
+  category: rotation-captcha
+design_translation:
+  retained_patterns:
+    - a tilted picture the visitor must rotate to its upright orientation
+    - a drag control that rotates the picture in discrete steps
+    - verification succeeds only when the upright orientation is reached
+  local_adaptations:
+    - server renders the tilted scene and keeps the correct rotation step as the
+      answer (checked server-side, never sent to the client) -- a true CAPTCHA,
+      not a client-side angle check
+    - a fixed pool of eight public-domain or CC0 photographs with clear upright
+      cues, selected deterministically from server-side challenge material
+    - eight 45-degree steps instead of twelve 30-degree steps to reduce exact
+      angle-estimation difficulty while retaining orientation reasoning
+    - image provenance and content hashes are recorded with the local assets
+    - step_count remains configurable; palette follows the server-issued challenge variant
+    - completion returns to the isolated upstream path
+excluded_behaviors:
+  - real CAPTCHA provider integration or client-exposed answers
+  - mouse-coordinate, fingerprint, credential, or submitted-value logging
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions
+notes:
+  - reclassified from pointer to challenge on 2026-10-06; the earlier pointer
+    version validated the angle client-side (spoofable) and required visual
+    judgement unlike the purely mechanical pointer gates.

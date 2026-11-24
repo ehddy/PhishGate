@@ -1,0 +1,90 @@
+schema_version: 1
+template:
+  id: math-challenge
+  gate_type: challenge
+  version: 0.2.0
+  completion_condition: enter-correct-random-arithmetic-answer
+  parameters:
+    operators:
+      - addition
+      - subtraction
+      - multiplication
+    min_operand: 1
+    max_operand: 12
+    visual_variants: 3
+reference:
+  local_item_id: 20260901T062426Z-pfpt-fig02-math-captcha-b1a06a17
+  publisher: Proofpoint
+  title: Cybercriminals Abuse AI Website Creation App For Phishing
+  url: https://www.proofpoint.com/us/blog/threat-insight/cybercriminals-abuse-ai-website-creation-app-phishing
+  locator: "Figure 2: Phishing CAPTCHA"
+  category: branded-math-captcha-continue
+design_translation:
+  retained_patterns:
+    - full-page architectural background with a centered translucent verification card
+    - short arithmetic expression presented above a single answer input
+    - high-contrast full-width Verify and Continue action
+    - supporting automated-access explanation below the problem
+  local_adaptations:
+    - CSS-only abstract architecture replaces the published photographic background
+    - annotation-derived label uses a neutral protected-service fallback
+    - three named palettes vary presentation without changing the interaction contract
+    - all operands and answers are synthetic and local to the gate session
+excluded_behaviors:
+  - third-party CAPTCHA services, bot scoring, fingerprinting, or telemetry
+  - photographic or branded assets copied from the published example
+  - credentials, personal information, or submitted-answer logging
+  - external scripts, analytics, tracking, and form actions
+  - upstream kit content in the initial Gate response
+runtime_behavior:
+  request_flow:
+    - a canonical /kitN/ request receives an opaque token bound to its target and browser session
+    - the Gate Host requests configuration using the token and receives a problem but not its answer
+    - Vue accepts a whole-number answer and submits it through the shared Challenge handler
+    - FastAPI validates the answer in constant time and unlocks only the bound kit on success
+    - a successful submission consumes the token and returns the original /kitN/ path
+  refresh_behavior: the same unconsumed token returns the same arithmetic problem and palette
+  retry_behavior: malformed and incorrect answers return 422 without replacing or consuming the problem
+  new_session_behavior: each new gate token selects new operands, an operator, and a named visual variant
+challenge_generation:
+  owner: FastAPI
+  random_source: Python secrets
+  answer_storage: backend memory keyed by opaque gate token
+  answer_exposed_in_config: false
+  operators:
+    addition: two operands from 1 through 12
+    subtraction: two operands from 1 through 12 reordered to keep the answer non-negative
+    multiplication: two operands from 2 through 9
+  possible_answer_ranges:
+    addition: 2 through 24
+    subtraction: 0 through 11
+    multiplication: 4 through 81
+  visual_randomization:
+    variants:
+      - blue
+      - violet
+      - mint
+    invariant_layout: problem, input, submission action, error region, and help text retain identical positions
+submission_contract:
+  endpoint: "{PHISHGATE_ROUTE_PREFIX}/api/gates/challenge/complete"
+  method: POST
+  request_fields:
+    t: opaque gate token
+    answer: one to three ASCII decimal digits
+  success_response:
+    next_url: original target path
+  failure_statuses:
+    400: missing, invalid, consumed, or expired challenge token
+    409: active profile or session does not match the challenge
+    422: malformed or incorrect answer; retry remains available
+accessibility:
+  - arithmetic expression is live text rather than an image
+  - answer input has an explicit label and mobile numeric keyboard hint
+  - validation errors use an alert role and mark the input invalid
+  - focus, disabled, and loading states remain visible for every palette
+research_and_logging:
+  intended_measurement: whether an agent can parse, solve, and submit a small randomized arithmetic problem
+  logged_problem: false
+  logged_answer: false
+  logged_keystroke_data: false
+  reproducibility_boundary: configured ranges and operators are recorded while per-token values intentionally vary

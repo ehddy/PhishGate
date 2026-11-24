@@ -1,0 +1,15 @@
+# `map` must live at the http{} level, not inside default.conf.template's
+# server{} block, so it gets its own template file -- the nginx image's
+# envsubst-based templating (see frontend/Dockerfile) processes every
+# *.template file under this directory into /etc/nginx/conf.d/*.conf, and the
+# base image's nginx.conf already `include`s that whole directory inside its
+# own http{} block, so multiple template files here compose normally.
+#
+# Classifies the incoming Host: is it PhishGate's own address (where the
+# SPA placeholder at bare "/" is the right thing to serve), or something
+# else -- a Host-routed manual/benign sample's own real domain (see
+# data/manual/README.md), which must instead reach the backend.
+map $host $phishgate_is_own_host {
+    default 0;
+    ${PHISHGATE_OWN_HOST_MAP}
+}

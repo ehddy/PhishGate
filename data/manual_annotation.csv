@@ -1,0 +1,101 @@
+dataset,label,directory,brand,page_type,popularity,tranco_rank,tranco_list_id,brand_relation,source_url,collected_at
+manual,phishing,536alitaher.github.io_instagram-login1_165456a0,Instagram,,,,,,https://536alitaher.github.io/instagram-login1,2026-09-21T07:33:37.170225+00:00
+manual,phishing,accessuphildappsso.framer.media_6918ef66,Uphold,,,,,,https://accessuphildappsso.framer.media/,2026-09-28T07:54:23.752349+00:00
+manual,phishing,account-att-bells-com.webflow.io_0b603fef,AT&T,,,,,,https://account-att-bells-com.webflow.io/,2026-09-18T07:26:13.867635+00:00
+manual,phishing,accounts.binanceuz.co_ru_login_password_4cdfbbe6,Binance,,,,,,http://accounts.binanceuz.co/ru/login/password/,2026-09-18T07:08:52.495610+00:00
+manual,phishing,accounverify.github.io_verify_04cf6f91,Instagram,,,,,,https://accounverify.github.io/verify,2026-09-28T04:35:03.058281+00:00
+manual,phishing,adminvisibilidad.serviciosmsm.com_e4a528a7,Mahou San Miguel,,,,,,https://adminvisibilidad.serviciosmsm.com/,2026-09-25T10:21:07.010540+00:00
+manual,phishing,airstayroom.com_catalog_jeeff.html_0d690376,WeTransfer,,,,,,https://airstayroom.com/catalog/jeeff.html,2026-09-28T07:53:22.183079+00:00
+manual,phishing,alitoufeeq209-beep.github.io_facebook_fdfb71a4,Facebook,,,,,,https://alitoufeeq209-beep.github.io/facebook/,2026-09-28T04:38:15.857827+00:00
+manual,phishing,att-104145.weeblysite.com_3027af72,AT&T,,,,,,https://att-104145.weeblysite.com/,2026-09-25T11:12:18.938515+00:00
+manual,phishing,att-store-104668.weeblysite.com_af425950,Xfinity,,,,,,http://att-store-104668.weeblysite.com/,2026-09-25T10:34:58.477865+00:00
+manual,phishing,audibhopal.com_previous_aru6q_web_authen.php_23a3b146,aruba.it,,,,,,https://audibhopal.com/previous/aru6q/web/authen.php,2026-09-28T07:57:57.763061+00:00
+manual,phishing,bancoprocredit.vercel.app_6fde5621,Banco ProCredit,,,,,,https://bancoprocredit.vercel.app/,2026-09-18T07:36:40.516999+00:00
+manual,phishing,banktowne.com_d7796e4d,TowneBank,,,,,,https://banktowne.com,2026-09-28T04:29:20.072131+00:00
+manual,phishing,bellsouth-verifier-sign-in-02ad5b.webflow.io_bbae2b38,AT&T,,,,,,https://bellsouth-verifier-sign-in-02ad5b.webflow.io/,2026-09-27T06:50:34.574765+00:00
+manual,phishing,blackbarry0002.github.io_WFL_TEST_37e76018,Wells Fargo,,,,,,https://blackbarry0002.github.io/WFL_TEST/,2026-09-29T05:26:58.328843+00:00
+manual,phishing,bpisas.com_ph_8cfd1a62,Bank of the Philippine Islands (BPI),,,,,,https://bpisas.com/ph,2026-09-29T05:33:02.270850+00:00
+manual,phishing,ca-ndaxcdn.framer.media_9ea31e62,Ndax,,,,,,https://ca-ndaxcdn.framer.media/,2026-09-28T04:28:30.859716+00:00
+manual,phishing,centrala-administracja.vercel.app_dafc7543,Onet Poczta,,,,,,https://centrala-administracja.vercel.app/,2026-09-10T00:01:05.938945+00:00
+manual,phishing,citibank-online.vercel.app_account_b9d84d9f,Citi,,,,,,https://citibank-online.vercel.app/account,2026-09-29T05:22:30.192248+00:00
+manual,phishing,comcastnow.weebly.com_8b29f591,Xfinity (Comcast),,,,,,https://comcastnow.weebly.com/,2026-09-10T00:05:45.347458+00:00
+manual,phishing,containersforsale.com.pk_wp-includes_login.php_ce9cad01,NetEase,,,,,,http://containersforsale.com.pk/wp-includes/login.php,2026-09-28T04:38:24.471739+00:00
+manual,phishing,credi-pichincha-ecuador--solusion.replit.app_2e987d4a,Banco Pichincha,,,,,,https://credi-pichincha-ecuador--solusion.replit.app/,2026-09-18T07:36:49.425933+00:00
+manual,phishing,d2xxkrsy.krinvest.org_61e3066b,한국투자증권 (Korea Investment & Securities / TrueFriend),,,,,,https://d2xxkrsy.krinvest.org/,2026-09-18T03:25:38.659459+00:00
+manual,phishing,domaine-swiss.jimdofree.com_dd326189,Swisscom,,,,,,https://domaine-swiss.jimdofree.com/,2026-09-28T04:27:00.838507+00:00
+manual,phishing,ecount-29382830293.wasmer.app_f9dfabce,ECOUNT ERP,,,,,,https://ecount-29382830293.wasmer.app/,2026-09-18T03:26:19.759964+00:00
+manual,phishing,editable-static-website--laboratorium13.replit.app_aac2276e,Microsoft,,,,,,https://editable-static-website--laboratorium13.replit.app/,2026-09-25T10:29:17.917347+00:00
+manual,phishing,ehay.item.com.login.se.eddiesresidence.co.tz_2734d38c,eBay,,,,,,https://ehay.item.com.login.se.eddiesresidence.co.tz/,2026-09-27T08:37:33.543873+00:00
+manual,phishing,elis365.webflow.io_d4e27cf4,Microsoft,,,,,,https://elis365.webflow.io/,2026-09-28T04:28:01.654002+00:00
+manual,phishing,endomedik.com.ar_success_moves.html_e3f82925,Microsoft,,,,,,http://endomedik.com.ar/success/moves.html,2026-09-28T07:55:27.003201+00:00
+manual,phishing,facebookctf.vercel.app_9b20ea8f,Facebook,,,,,,https://facebookctf.vercel.app/,2026-09-28T04:28:16.473449+00:00
+manual,phishing,fala-bellacontig.com_Yjeisk1_d9a580ed,Falabella / Soriana,,,,,,https://fala-bellacontig.com/Yjeisk1/,2026-09-09T05:00:33.247811+00:00
+manual,phishing,feirao-oflcial.com_app_index.html_b8cdd91f,Serasa,,,,,,https://feirao-oflcial.com/app/index.html,2026-09-28T07:54:45.238019+00:00
+manual,phishing,functional-melon-751808.framer.app_e25b1f3b,UPC,,,,,,https://functional-melon-751808.framer.app/,2026-09-28T07:54:28.544058+00:00
+manual,phishing,gji.sa.com_Ay_login.html_06f20c3b,Chase Bank,,,,,,https://gji.sa.com/Ay/login.html,2026-09-18T07:11:11.525045+00:00
+manual,phishing,gov.irpeff.us.cc_it_593071c9,Agenzia delle Entrate,,,,,,https://gov.irpeff.us.cc/it,2026-09-27T06:53:18.040850+00:00
+manual,phishing,hsh021215-cyber.github.io_tester_3b412d37,Naver,,,,,,https://hsh021215-cyber.github.io/tester/,2026-09-21T07:42:02.128135+00:00
+manual,phishing,ibbhelp.com_pages_a38d84b6,AIB,,,,,,https://ibbhelp.com/pages/?d=ibb&p=index,2026-09-28T04:38:19.657783+00:00
+manual,phishing,info-sunrise.jimdofree.com_de3f04ad,Sunrise Mail,,,,,,https://info-sunrise.jimdofree.com/,2026-09-27T12:30:02.308164+00:00
+manual,phishing,insta-reelz928282818.github.io_Instagram-profile-_1a3fedc0,Instagram,,,,,,https://insta-reelz928282818.github.io/Instagram-profile-/,2026-09-25T10:34:03.957622+00:00
+manual,phishing,instagram-clone-five-delta.vercel.app_auth_login_4c3bfeae,Instagram,,,,,,https://instagram-clone-five-delta.vercel.app/auth/login,2026-09-25T10:25:18.639036+00:00
+manual,phishing,internetbanking.caixa.suporte-oficial.com_47e650ee,CAIXA,,,,,,https://internetbanking.caixa.suporte-oficial.com/,2026-09-29T04:44:14.653800+00:00
+manual,phishing,jy.sefgwefwef.com_e913312a,미래에셋증권 (Mirae Asset Securities),,,,,,https://jy.sefgwefwef.com/,2026-09-18T03:25:59.492243+00:00
+manual,phishing,kaiserthrive.org_xxxx_mnx_ae21e980,LinkedIn,,,,,,https://kaiserthrive.org/xxxx/mnx/,2026-09-25T10:19:53.933414+00:00
+manual,phishing,kefine.sbs_d41eaf2b,경찰청 교통민원24(이파인),,,,,,https://kefine.sbs/,2026-09-09T23:57:24.935724+00:00
+manual,phishing,kpdw9iuh11.bugcutter.com_rak_email_KYC-1_Compliance_hot_b1f4b913,Microsoft,,,,,,http://kpdw9iuh11.bugcutter.com/rak/email/KYC-1/Compliance/hot,2026-09-21T07:33:47.041966+00:00
+manual,phishing,kxv81-3jfdran-hwn64-lpw-9v2t4d-hwn64-733a.pages.dev_welcome__9e765ee2,Facebook,,,,,,https://kxv81-3jfdran-hwn64-lpw-9v2t4d-hwn64-733a.pages.dev/welcome_aboard,2026-09-28T04:36:04.353341+00:00
+manual,phishing,kyd.pimine.pink_7a1d7e01,Pi Network,,,,,,https://kyd.pimine.pink/,2026-09-09T05:12:56.745044+00:00
+manual,phishing,lakeeriewalleyetrail.org_img_ch.html_05218e28,ECOUNT ERP,,,,,,https://lakeeriewalleyetrail.org/img/ch.html,2026-09-11T02:18:32.008722+00:00
+manual,phishing,logical-stegosaurus-061760.framer.app_374544d6,AR24,,,,,,https://logical-stegosaurus-061760.framer.app/,2026-09-28T07:56:24.536234+00:00
+manual,phishing,login-east3.cashappps.com_ca_cb687c65,Cash App,,,,,,http://login-east3.cashappps.com/ca/,2026-09-18T07:06:47.775719+00:00
+manual,phishing,login.onemilliondrive.com_landing_form_1b5bddc0-2b87-41cc-87_4dbc33f6,Microsoft,,,,,,https://login.onemilliondrive.com/landing/form/1b5bddc0-2b87-41cc-8746-d5eadc9dbfc8,2026-09-25T10:25:30.535719+00:00
+manual,phishing,mail-mof-gov-np.netlify.app_3f7b36bb,Nepal Ministry of Foreign Affairs,,,,,,http://mail-mof-gov-np.netlify.app/,2026-09-27T06:50:47.689847+00:00
+manual,phishing,many-pear-827420.framer.app_f3fab871,AT&T,,,,,,https://many-pear-827420.framer.app/,2026-09-25T10:20:10.380547+00:00
+manual,phishing,mashrq.vercel.app_343cb9cb,Mashreq Bank,,,,,,https://mashrq.vercel.app/,2026-09-21T07:14:27.023818+00:00
+manual,phishing,matriz-treinamentos-shopee.vercel.app_a2f388f6,Shopee,,,,,,https://matriz-treinamentos-shopee.vercel.app/,2026-09-18T07:38:33.192675+00:00
+manual,phishing,mohammedshakeer04.github.io_Netflix-Clone_5e5b4951,Netflix,,,,,,https://mohammedshakeer04.github.io/Netflix-Clone/,2026-09-25T10:35:12.161154+00:00
+manual,phishing,mrhacker-1110.github.io_login-page_b701cc9b,Instagram,,,,,,https://mrhacker-1110.github.io/login-page,2026-09-28T04:35:58.590446+00:00
+manual,phishing,mylewisph.com_xcvbn_pages_1c88d9e4,Netflix,,,,,,https://mylewisph.com/xcvbn/pages/,2026-09-28T07:55:39.135515+00:00
+manual,phishing,new-interakkkpanel-page.vercel.app_deposit_scotiabank_bf86029f,Scotiabank,,,,,,https://new-interakkkpanel-page.vercel.app/deposit/scotiabank,2026-09-25T10:23:25.107235+00:00
+manual,phishing,ofornaogu-dpzv6dife1hh.edgeone.dev_91756392,DHL,,,,,,https://ofornaogu-dpzv6dife1hh.edgeone.dev/,2026-09-28T07:55:01.113860+00:00
+manual,phishing,orange23.godaddysites.com_72b21662,Orange,,,,,,https://orange23.godaddysites.com/,2026-09-28T04:33:41.632324+00:00
+manual,phishing,outlook.verifytoken.com_s_63bzgfsvbwsfcdx7y9_584dd8_90eab167_a4cb0f3c,Adobe,,,,,,http://outlook.verifytoken.com/s/63bzgfsvbwsfcdx7y9/584dd8/90eab167-7429-489f-99f6-ce86e8d0d81a/,2026-09-18T07:06:58.234417+00:00
+manual,phishing,pay.paykmc.com_paypal_8xgzenct.html_2003a3cb,PayPal,,,,,,http://pay.paykmc.com/paypal/8xgzenct.html,2026-09-18T07:09:01.686167+00:00
+manual,phishing,play-roblox.com_CreateAccount_f10eb4ce,Roblox,,,,,,https://play-roblox.com/CreateAccount,2026-09-29T05:32:20.234654+00:00
+manual,phishing,pme75.xn--989a002a0ig51c.xyz_7cc7b94b,Telegram,,,,,,https://pme75.xn--989a002a0ig51c.xyz/,2026-09-18T03:23:01.805289+00:00
+manual,phishing,postoffice.claimhere.co.uk_support_login_5214171b,Post Office,,,,,,https://postoffice.claimhere.co.uk/support/login,2026-09-29T04:44:49.354615+00:00
+manual,phishing,psyrusec.com_wildlan_6275f10d,Microsoft,,,,,,https://psyrusec.com/wildlan,2026-09-27T08:35:39.187878+00:00
+manual,phishing,roblox-login.vercel.app_c7220ba2,Roblox,,,,,,https://roblox-login.vercel.app/,2026-09-28T04:33:36.454675+00:00
+manual,phishing,sam-sung-eletronic.com_2400e867,삼성전자 (Samsung Electronics),,,,,,https://sam-sung-eletronic.com/,2026-09-18T03:27:16.286002+00:00
+manual,phishing,scanned.page_M33zwH_2dd2625c,Klarna,,,,,,https://scanned.page/M33zwH,2026-09-10T00:05:55.973476+00:00
+manual,phishing,sdjtjf.weebly.com_38abcb0e,Microsoft,,,,,,https://sdjtjf.weebly.com/,2026-09-10T00:01:14.896238+00:00
+manual,phishing,secured-online.github.io_WF_2101d044,Wells Fargo,,,,,,https://secured-online.github.io/WF/,2026-09-25T10:27:44.413191+00:00
+manual,phishing,security-server-landing-page--lvahlgren.replit.app_e05218ad,DocuSign,,,,,,https://security-server-landing-page--lvahlgren.replit.app/,2026-09-25T10:29:01.438172+00:00
+manual,phishing,security-server-page--servarog.replit.app_dd630d88,Microsoft,,,,,,https://security-server-page--servarog.replit.app/,2026-09-25T11:11:53.823875+00:00
+manual,phishing,security-server-static-page--fordsvt9802.replit.app_0008dc95,Microsoft,,,,,,https://security-server-static-page--fordsvt9802.replit.app/,2026-09-28T04:33:17.814496+00:00
+manual,phishing,site-00rqnl2r5.godaddysites.com_ac600dbb,Sunrise,,,,,,https://site-00rqnl2r5.godaddysites.com/,2026-09-28T07:55:21.326765+00:00
+manual,phishing,site-2k4k5j4e6.godaddysites.com_7171081f,Sunrise (Swiss telecom webmail),,,,,,https://site-2k4k5j4e6.godaddysites.com/,2026-09-21T07:15:36.431244+00:00
+manual,phishing,soportemaps.click_isignesp.php_41df74ad,Apple,,,,,,https://soportemaps.click/isignesp.php,2026-09-20T13:11:08.589426+00:00
+manual,phishing,spty-invest.com_bbs_register_form.php_6a9d2a30,Spotify,,,,,,https://spty-invest.com/bbs/register_form.php,2026-09-21T07:57:46.235298+00:00
+manual,phishing,supportxfinty.weeblysite.com_ea45f97d,Xfinity,,,,,,https://supportxfinty.weeblysite.com/,2026-09-28T04:28:47.453032+00:00
+manual,phishing,tdkesd.weebly.com_13e4a84b,Telstra,,,,,,https://tdkesd.weebly.com/,2026-09-28T07:55:41.720103+00:00
+manual,phishing,tirzahollenhorst.com_am_amex100_4f42e580,American Express,,,,,,https://tirzahollenhorst.com/am/amex100/,2026-09-18T07:37:12.557132+00:00
+manual,phishing,top-permission-039904.framer.app_9e7def80,Rogers,,,,,,https://top-permission-039904.framer.app/,2026-09-28T07:54:28.745872+00:00
+manual,phishing,totaltinting.com.au_credit_aru6q_web_authen.php_f087a74b,Aruba.it,,,,,,https://totaltinting.com.au/credit/aru6q/web/authen.php,2026-09-27T06:52:12.632550+00:00
+manual,phishing,verificarcuenta-micros0ft2026way.zya.me_3fdfdccf,Microsoft,,,,,,https://verificarcuenta-micros0ft2026way.zya.me/?i=1,2026-09-29T05:22:54.936770+00:00
+manual,phishing,verify.your-account-login.com_21603531,Microsoft,,,,,,https://verify.your-account-login.com/?rid=YAMrq0U,2026-09-25T10:34:44.622823+00:00
+manual,phishing,vmi3535754.contaboserver.net_dd_track_card.php_b044deff,DHL,,,,,,https://vmi3535754.contaboserver.net/dd/track/card.php,2026-09-28T04:29:55.167803+00:00
+manual,phishing,w9zjm.xn--989ak02cpna696b.me_0a409139,Telegram,,,,,,https://w9zjm.xn--989ak02cpna696b.me/,2026-09-09T05:29:29.488780+00:00
+manual,phishing,www.comcastwebmailuser.weebly.com_60973d5c,Xfinity,,,,,,http://www.comcastwebmailuser.weebly.com/,2026-09-25T10:38:03.181359+00:00
+manual,phishing,www.duishalik.blogspot.com_93e8e11d,Google,,,,,,https://www.duishalik.blogspot.com/,2026-09-28T04:38:35.720142+00:00
+manual,phishing,www.grupoimpaktu.ao_quotesss_onedrive-verify-obf.html_596b84de,Microsoft OneDrive,,,,,,http://www.grupoimpaktu.ao/quotesss/onedrive-verify-obf.html,2026-09-18T07:06:37.233092+00:00
+manual,phishing,www.host-coinbase.com_467fdbdd,Coinbase,,,,,,https://www.host-coinbase.com/,2026-09-18T07:10:46.139050+00:00
+manual,phishing,www.ibdssonline.com_login_9e1264ed,DBS,,,,,,https://www.ibdssonline.com/login,2026-09-28T07:54:33.527994+00:00
+manual,phishing,www.jotform.com_parnemrzl_compte-wero_2b4766a3,Wero,,,,,,https://www.jotform.com/parnemrzl/compte-wero,2026-09-18T07:26:02.279092+00:00
+manual,phishing,www.kotaccfuel.com_b5255f3a,Microsoft Excel,,,,,,https://www.kotaccfuel.com/,2026-09-27T08:49:57.286125+00:00
+manual,phishing,www.lifetrust.pt_atpjxec_hpb1gvj_bkndfyr_system_security_8c4ab15b,Apple,,,,,,http://www.lifetrust.pt/atpjxec/hpb1gvj/bkndfyr/system/security/,2026-09-25T10:37:46.452246+00:00
+manual,phishing,www.progran-shopee53.blogspot.com_9faab676,Shopee,,,,,,https://www.progran-shopee53.blogspot.com/,2026-09-28T04:32:29.266651+00:00
+manual,phishing,www.security-messenger-notification-team.jo3.org_ajax_very.p_acdca366,Meta,,,,,,https://www.security-messenger-notification-team.jo3.org/ajax/very.php/,2026-09-25T10:26:59.218073+00:00
+manual,phishing,xxxcomcast.weebly.com_58a3ee49,Xfinity (Comcast),,,,,,https://xxxcomcast.weebly.com/,2026-09-10T00:01:24.118122+00:00
+manual,phishing,zu7013.craftum.io_cf2b7652,Microsoft,,,,,,https://zu7013.craftum.io/,2026-09-28T07:54:11.195735+00:00

@@ -1,0 +1,37 @@
+# G1 kits and annotations from the original dataset authors (download separately).
+data/private/annotations/*
+!data/private/annotations/README.md
+data/private/phishdecloaker/*
+!data/private/phishdecloaker/README.md
+data/private/dynapd/*
+!data/private/dynapd/README.md
+!data/private/dynapd/selection.csv
+
+# G2/G3 snapshots (download from Zenodo).
+data/manual/samples/
+
+# Local environment and generated output.
+.env
+.env.*
+!.env.example
+*.log
+logs/
+
+# Dataset bundles used by scripts/dataset_bundle.py.
+/tmp/
+
+# Local Compose overrides.
+docker-compose.override.yml
+
+# Seed-derived targets (regenerate with scripts/prepare_experiment.py).
+targets/
+
+# Python and Node build artifacts.
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+
+# OS files.
+.DS_Store

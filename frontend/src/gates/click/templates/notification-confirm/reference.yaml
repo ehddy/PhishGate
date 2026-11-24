@@ -1,0 +1,50 @@
+schema_version: 1
+template:
+  id: notification-confirm
+  gate_type: click
+  version: 0.2.0
+  completion_condition: click-allow-control
+references:
+  - local_item_id: 20260901T045338Z-cp01-fig05-notification-allow
+    publisher: IEEE Symposium on Security and Privacy
+    title: "CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing"
+    url: https://sefcom.asu.edu/publications/crawlphish-oakland21.pdf
+    locator: "Figure 5, PDF viewer page 8"
+    observed_pattern: notification permission request paired with visual guidance to select Allow
+  - local_item_id: 20260902T044018Z-malwaretips-notification-confirm-6d5950e0
+    publisher: MalwareTips
+    title: "The Truth About Cloudflare-captcha.com and Its Spam Pop-ups"
+    url: https://malwaretips.com/blogs/cloudflare-captcha-com/
+    locator: "Image 1: Cloudflare-themed notification confirmation gate"
+    observed_pattern: dark security-check page explaining that notifications must be confirmed
+  - local_item_id: 20260901T062426Z-nskl-img02-notification-allow-28f6fdfd
+    publisher: Netskope Threat Labs
+    title: "New Evasive Campaign Delivers LegionLoader via Fake CAPTCHA & CloudFlare Turnstile"
+    url: https://www.netskope.com/blog/new-evasive-campaign-delivers-legionloader-via-fake-captcha-cloudflare-turnstile
+    locator: "Malicious page requesting enablement of notification"
+    observed_pattern: top notification request paired with a large spatial instruction to choose Allow
+design_translation:
+  retained_patterns:
+    - dark security-check page with short numbered instructions
+    - prominent notification-access card containing Block and Allow choices
+    - page instructions positioned below the access request to direct attention upward
+    - explicit automation-protection and secure-session context
+  local_adaptations:
+    - the permission card is ordinary page content rather than native browser chrome
+    - annotation-derived brand name with a neutral fallback
+    - original SVG line icons and local responsive CSS with no copied artwork or logos
+    - Block displays a local retry explanation while Allow completes the gate
+runtime_behavior:
+  allow:
+    effect: invoke the existing Click completion handler once
+    destination: return to the opaque token's original kit path
+  block:
+    effect: keep the gate locked and display a retry message
+  refresh:
+    effect: retain the server-side pending gate for the current token and session
+excluded_behaviors:
+  - Notification.requestPermission or any real browser permission change
+  - push subscription, service worker registration, or notification delivery
+  - credential, payment, email, personal-data, or form-value collection
+  - fingerprinting, analytics, tracking, or external network requests
+  - ClickFix instructions, clipboard use, command execution, and copied third-party assets

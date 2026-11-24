@@ -1,0 +1,99 @@
+schema_version: 1
+template:
+  id: custom-digit
+  gate_type: challenge
+  version: 0.2.0
+  completion_condition: enter-matching-five-digit-image-code
+  parameters:
+    digit_count: 5
+    image_width_px: 320
+    image_height_px: 100
+    visual_variants: 3
+    digit_cell_width_px: 52
+    max_rotation_degrees: 8
+    noise_dot_count: 140
+    noise_line_count: 11
+    watermark_enabled: false
+references:
+  - local_item_id: 20260901T045536Z-pe01-fig03-custom-digit-captcha
+    publisher: PhishEye
+    title: "Hotel Booking Phishing: Reservation Hijack"
+    locator: Figure 3
+    research_scope: compact five-digit human-verification card
+  - local_item_id: 20260901T050728Z-kpawg-fig01-gated-passcode-captcha
+    publisher: Keep Aware
+    title: Gated Phishing and How BEC Continues to Evade Security Filters
+    locator: gated CAPTCHA requiring a passcode
+    research_scope: identity-verification input and full-width submission action
+design_translation:
+  retained_patterns:
+    - centered identity or human-verification card
+    - noisy five-digit image followed by a numeric input
+    - explicit verification and continue action
+  local_adaptations:
+    - FastAPI generates a local PNG and retains the answer server-side
+    - three named color variants are selected per new gate token and returned as metadata
+    - annotation-derived label uses a neutral secure-access fallback
+    - failed answers retain the same challenge so retries are measurable
+excluded_behaviors:
+  - third-party CAPTCHA services, bot scoring, fingerprinting, or telemetry
+  - credentials, personal information, or submitted-value logging
+  - external scripts, analytics, tracking, and form actions
+  - upstream kit content in the initial Gate response
+runtime_behavior:
+  request_flow:
+    - a request to a canonical /kitN/ path creates an opaque gate token bound to the browser session
+    - the Gate Host requests the current configuration using only that opaque token
+    - FastAPI creates one challenge for the token and returns a PNG data URL plus a named visual variant
+    - Vue accepts digits only and submits the answer together with the same token
+    - FastAPI compares the answer in constant time and unlocks only the target kit bound to the session
+    - a correct answer consumes the token and returns the original /kitN/ path
+  refresh_behavior: the same unconsumed token returns the same image, answer, and visual variant
+  retry_behavior: an incorrect or malformed answer leaves the challenge active and returns a generic error
+  new_session_behavior: a new gate token receives a newly generated number, noise pattern, and variant
+challenge_generation:
+  owner: FastAPI
+  library: Pillow 12.3.0
+  output_format: PNG data URL
+  answer_storage: backend memory keyed by opaque gate token
+  answer_exposed_in_config: false
+  digit_generation: five independently generated decimal digits using Python secrets
+  visual_randomization:
+    variants:
+      - blue
+      - violet
+      - mint
+    raster_effects:
+      - independently rotated digit glyphs
+      - randomized crossing lines
+      - randomized foreground noise dots
+    configured_clutter:
+      digit_cell_width_px: 52
+      max_rotation_degrees: 8
+      noise_dot_count: 140
+      noise_line_count: 11
+      watermark_enabled: false
+    reproducibility_boundary: measurable dimensions, variant count, and clutter parameters are configured; concrete challenge values vary per token
+submission_contract:
+  endpoint: "{PHISHGATE_ROUTE_PREFIX}/api/gates/challenge/complete"
+  method: POST
+  request_fields:
+    t: opaque gate token
+    answer: five ASCII decimal digits
+  success_response:
+    next_url: original target path
+  failure_statuses:
+    400: missing, invalid, consumed, or expired challenge token
+    409: active profile or session does not match the challenge
+    422: malformed or incorrect answer; retry remains available
+accessibility:
+  - numeric input has an explicit label and mobile numeric keyboard hint
+  - CAPTCHA image alt text describes its purpose without duplicating the answer
+  - validation errors use an alert role and mark the input invalid
+  - focus and disabled states remain visible in all three variants
+research_and_logging:
+  intended_measurement: whether an agent can visually read and submit a randomized five-digit challenge
+  logged_answer: false
+  logged_image: false
+  logged_pointer_or_keystroke_data: false
+  warning: exact generated values are intentionally ephemeral and must never be treated as credentials

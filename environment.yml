@@ -1,0 +1,17 @@
+name: PhishGate
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.0
+  - php=7.4.27
+  # conda-forge's PHP 7.4 package omits ext/curl and ext/zlib. These packages
+  # let setup build matching shared extensions from official PHP source.
+  - libcurl=7.86.*
+  - zlib=1.3.*
+  - autoconf
+  - c-compiler
+  - make
+  - pkg-config
+  - pip
+  - pip:
+      - -r backend/requirements.lock.txt

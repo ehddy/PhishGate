@@ -1,0 +1,26 @@
+schema_version: 1
+template:
+  id: movement-verify
+  gate_type: interaction
+  version: 0.2.0
+  completion_condition: move-pointer-into-target-area
+reference:
+  local_item_id: 20260901T062426Z-cofp-fig05-mouse-movement-captcha-d1cfe3da
+  publisher: Cofense
+  title: "Immunity Evasion: Defeating Security with Active Measures & Long-Lived Domains"
+  url: https://cofense.com/blog/immunity-evasion-defeating-security-with-active-measures-long-lived-domains
+  locator: "Figure 5: Custom CAPTCHA using mouse movement to confirm a human"
+design_translation:
+  retained_patterns:
+    - dashed rectangular movement-tracking target area
+    - single-line instruction directing the pointer into the area
+    - sparse neutral page behind the interaction
+  local_adaptations:
+    - annotation-derived brand label with neutral connection-check language
+    - responsive local-only page instead of the original hosted phishing page
+    - local CSS-only pulse and checkmark states, no copied brand logos or watermarks
+excluded_behaviors:
+  - credential or email collection
+  - CAPTCHA scoring, bot-detection telemetry, or logged pointer coordinates
+  - native notification permission request
+  - external scripts, analytics, and form actions

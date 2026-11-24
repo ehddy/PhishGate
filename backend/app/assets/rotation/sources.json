@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-10-06",
+  "selection_criteria": "Public-domain or CC0 photographs with an unambiguous upright orientation and no challenge-answer text.",
+  "assets": [
+    {
+      "file": "cape-romain-lighthouse.jpg",
+      "title": "Cape Romain 1827 Lighthouse",
+      "author": "Unknown; U.S. Fish and Wildlife Service work",
+      "license": "Public domain (U.S. federal government work)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cape_Romain_1827_Lighthouse.jpg",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cape%20Romain%201827%20Lighthouse.jpg?width=640",
+      "sha256": "f0e9b1a7e0eab39a945de923558ca4e995584524dbb8472b96bb72bb0733b9ee"
+    },
+    {
+      "file": "hale-lighthouse.jpg",
+      "title": "Hale Lighthouse",
+      "author": "Peter I. Vardy",
+      "license": "Public-domain dedication",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hale_Lighthouse.jpg",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hale%20Lighthouse.jpg?width=640",
+      "sha256": "bdefb7f3de132d1fd75ec0800b0b0748f80cc4a8cdf913eb18d629d438f0a993"
+    },
+    {
+      "file": "house-and-trees.jpg",
+      "title": "Southern Wisconsin house behind trees",
+      "author": "Yinan Chen",
+      "license": "Public-domain dedication",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gfp-southern-wisconsin-house-behind-trees.jpg",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gfp-southern-wisconsin-house-behind-trees.jpg?width=640",
+      "sha256": "30ac9e2f1f49d7fee589beaef814806f2279cb792ef9c83b8a54ebcc5ea25cc4"
+    },
+    {
+      "file": "perth-skyline.jpg",
+      "title": "Perth City Skyline",
+      "author": "Wai Hong Cheang",
+      "license": "Public-domain dedication",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Perth_City_Skyline.JPG",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Perth%20City%20Skyline.JPG?width=640",
+      "sha256": "888643eda4dff319cb29ae2f19d2fe149e826fa662fc7dbacbb6dc359760e401"
+    },
+    {
+      "file": "philadelphia-skyline.jpg",
+      "title": "Skyline in Philadelphia",
+      "author": "Daderot",
+      "license": "Public-domain dedication",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Skyline_in_Philadelphia_-_IMG_6643.JPG",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Skyline%20in%20Philadelphia%20-%20IMG%206643.JPG?width=640",
+      "sha256": "eef587583cb8dd1abaf1e4185e5d6d9f22b7630a6b259bb259fcfad92b32ec8e"
+    },
+    {
+      "file": "road-and-sky.jpg",
+      "title": "Southern Wisconsin road and sky",
+      "author": "Yinan Chen",
+      "license": "Public-domain dedication",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gfp-southern-wisconsin-road-and-sky.jpg",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gfp-southern-wisconsin-road-and-sky.jpg?width=640",
+      "sha256": "8163e2fc54d4ef19a4fa58b7075ca5d1ec224bd158611a4fd8b0d8ffa65b0eec"
+    },
+    {
+      "file": "seattle-skyline.jpg",
+      "title": "Seattle Kerry Park Skyline",
+      "author": "CommunistSquared",
+      "license": "CC0 1.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Seattle_Kerry_Park_Skyline.jpg",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Seattle%20Kerry%20Park%20Skyline.jpg?width=640",
+      "sha256": "3050d32246345aa1c7fb6e001b582c5c87e563d44f77fa967cb4165137bd278d"
+    },
+    {
+      "file": "water-horizon.jpg",
+      "title": "Water horizon",
+      "author": "Citynoise",
+      "license": "Public-domain dedication",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Water_horizon.jpg",
+      "download_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Water%20horizon.jpg?width=640",
+      "sha256": "048eea62e5ea6752573d1a999f7461eaae62326e1ebb3bf455766c078065bab4"
+    }
+  ]
+}

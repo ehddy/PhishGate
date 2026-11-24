@@ -1,0 +1,46 @@
+schema_version: 1
+template:
+  id: press-and-hold
+  gate_type: interaction
+  version: 0.1.0
+  completion_condition: maintain-primary-pointer-press-for-configured-duration
+  parameters:
+    hold_duration_ms:
+      default: 3000
+      accepted_range: [1000, 10000]
+      unit: milliseconds
+      meaning: uninterrupted primary-pointer hold time required for completion
+references:
+  - local_item_id: 20260901T065228Z-xorlab-fig-collage-multi-gate-verification-collage-fcd8c394
+    publisher: xorlab
+    title: "Abusing Adobe and QR Links for AITM Microsoft 365 Phishing"
+    url: https://www.xorlab.com/en/blog/abusing-adobe-and-qr-links-for-aitm-microsoft-365-phishing
+    locator: "verification steps collage: Press and hold to verify panel"
+    observed_pattern: centered document-verification card requiring a three-second hold while a progress bar completes
+  - publisher: HUMAN Security
+    title: "HUMAN Challenge: User-Friendly Verification"
+    url: https://www.humansecurity.com/hubfs/HUMAN_Solution-Brief_Human-Challenge.pdf
+    locator: "page 1: press-and-hold interaction and completion flow"
+    observed_pattern: a single branded button held continuously before access continues
+design_translation:
+  retained_patterns:
+    - sparse secured-document page with a centered identity-verification card
+    - explicit three-second hold instruction and visible progress feedback
+    - early release resets progress and asks the visitor to retry
+    - short success state before navigation
+  local_adaptations:
+    - generic document mark and annotation-derived label instead of copied Microsoft or OneNote assets
+    - local Vue and CSS implementation with Pointer Events for mouse, pen, and touch
+    - configurable integer hold duration for reproducible experiments
+    - no email-entry step or personal-data input from the reported phishing flow
+runtime_behavior:
+  - primary pointerdown on the verification button starts the hold timer
+  - uninterrupted capture advances a local progress bar without recording pointer data
+  - reaching hold_duration_ms invokes the Interaction completion handler once
+  - pointerup, pointer cancellation, capture loss, or window blur before completion resets progress
+  - successful completion returns to the opaque token's original kit path
+excluded_behaviors:
+  - credential, email, payment, personal-data, or form-value collection
+  - proof-of-work, behavioral scoring, fingerprinting, or pointer-coordinate logging
+  - third-party CAPTCHA code, scripts, analytics, trackers, copied logos, or external requests
+  - ClickFix instructions, clipboard use, command execution, and native permission prompts

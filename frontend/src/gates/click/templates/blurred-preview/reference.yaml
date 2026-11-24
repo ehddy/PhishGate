@@ -1,0 +1,30 @@
+schema_version: 1
+template:
+  id: blurred-preview
+  gate_type: click
+  version: 0.1.0
+  completion_condition: select-continue-button
+reference:
+  local_item_ids:
+    - 20260901T063547Z-zscv-fig10-blurred-security-challenge-e0ee9f1d
+    - 20260901T065228Z-sans-fig01-blurred-invoice-view-modal-9c4442e1
+  publishers:
+    - Zscaler ThreatLabz
+    - SANS Internet Storm Center
+  category: blurred-document-preview-unlock
+design_translation:
+  retained_patterns:
+    - a blurred document/content sheet sitting behind a centered modal
+    - a short "preview locked, view to continue" prompt over the blur
+    - one explicit action that proceeds to the real content
+  local_adaptations:
+    - the blurred backdrop is CSS-only shaped blocks, not a real or copied document
+    - annotation-derived document/portal label with a neutral fallback
+    - information density follows copy_variant
+    - completion returns to the isolated upstream path
+excluded_behaviors:
+  - the credential/sign-in modal shown in the SANS reference is deliberately NOT
+    reproduced; this is a click-to-continue gate with no input fields
+  - credential, email, or submitted-value collection
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions

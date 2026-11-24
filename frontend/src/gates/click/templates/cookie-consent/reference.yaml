@@ -1,0 +1,29 @@
+schema_version: 1
+template:
+  id: cookie-consent
+  gate_type: click
+  version: 0.2.0
+  completion_condition: dismiss-cookie-consent
+reference:
+  local_item_ids:
+    - 20260901T050632Z-kpaw-fig01-cookie-consent-banner
+    - 20260901T050632Z-kpaw-fig02-cookie-consent-overlay
+  publisher: Keep Aware
+  title: Fake Cookie Consent Used as a Phishing Gateway
+  url: https://keepaware.com/blog/fake-cookie-consent-used-as-a-phishing-gateway
+  locator: cookie-consent modal and overlay figures
+design_translation:
+  retained_patterns:
+    - dark page overlay behind a centered white Cookie Policy card
+    - top-right close control and one prominent blue Accept action
+    - policy explanation and link followed by explicit acknowledgement
+  local_adaptations:
+    - annotation-derived brand in the safe synthetic page header and policy text
+    - responsive synthetic content shell instead of hidden upstream content
+    - local CSS-only brand mark and cookie icon
+    - deterministic centered modal, compact banner, and split side-panel layouts
+    - whitelisted local theme tokens and fixed English consent copy
+excluded_behaviors:
+  - credential or email collection
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions

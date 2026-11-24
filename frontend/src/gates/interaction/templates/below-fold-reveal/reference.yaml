@@ -1,0 +1,37 @@
+schema_version: 1
+template:
+  id: below-fold-reveal
+  gate_type: interaction
+  version: 0.2.0
+  completion_condition: reach-scroll-threshold
+  parameters:
+    threshold_percent: 82
+references:
+  - local_item_id: 20260904T131214Z-itsolver-above-fold-scroll-hide-b2f70e41
+    publisher: IT Solver Support
+    title: Gmail Bounce Phishing Email Analysis
+    url: https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis
+    locator: above-the-fold mobile screenshot
+    research_scope: plausible delivery-notification content visible before scrolling
+  - local_item_id: 20260904T131215Z-itsolver-below-fold-scroll-reveal-d8a41c36
+    publisher: IT Solver Support
+    title: Gmail Bounce Phishing Email Analysis
+    url: https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis
+    locator: below-the-fold mobile screenshot
+    research_scope: concealed lower content reached only after scrolling
+design_translation:
+  retained_patterns:
+    - a familiar mail-reading layout provides a natural reason to scroll
+    - a routine delivery failure notice fills the initial viewport
+    - additional message content is positioned below the fold
+    - a single measurable scroll threshold changes the state
+  local_adaptations:
+    - generic responsive webmail chrome replaces the source service interface
+    - all sender, recipient, reference, and message text is synthetic
+    - the revealed card contains no active link and completion opens the isolated upstream
+    - local HTML and CSS replace screenshots, logos, and third-party assets
+excluded_behaviors:
+  - external links, redirects, scripts, analytics, tracking, and form actions
+  - credential, email, or submitted-value collection
+  - exact third-party branding or browser-chrome impersonation
+  - upstream kit content in the initial Gate response

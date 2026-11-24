@@ -1,0 +1,109 @@
+schema_version: 1
+template:
+  id: image-grid
+  gate_type: challenge
+  version: 0.2.0
+  completion_condition: select-matching-image-cells
+  parameters:
+    grid_size: 3
+    min_matches: 2
+    max_matches: 4
+references:
+  - local_item_id: 20260901T045638Z-u42cap-fig01-recaptcha-protected
+    publisher: Palo Alto Networks Unit 42
+    title: Discovering CAPTCHA Protected Phishing Campaigns
+    url: https://unit42.paloaltonetworks.com/captcha-protected-phishing/
+    locator: "select all squares containing X" grid CAPTCHA overlay
+    research_scope: overall grid-of-photos, click-to-select interaction pattern
+  - local_item_id: 20260901T063547Z-esen-fig09-duplicate-icon-captcha-b393d5cd
+    publisher: eSentire Threat Response Unit
+    title: "Phish & Chips: Serving Up Tycoon 2FA's Secrets"
+    url: https://www.esentire.com/blog/phish-chips-serving-up-tycoon-2fas-secrets
+    locator: Figure 9
+    research_scope: click-to-select icon/image grid as a human-verification gate
+design_translation:
+  retained_patterns:
+    - centered human-verification card with a short instruction naming the target category
+    - grid of independently rendered image cells, each toggled by a click
+    - explicit verify/continue action after a selection is made
+  local_adaptations:
+    - every cell is a simple PIL-drawn vector icon (car, umbrella, bicycle,
+      traffic light, star, tree, house, envelope, heart, cup, cloud, clock) —
+      no photographs, stock imagery, or bundled dataset, so no real image
+      CAPTCHA provider or licensed asset is involved
+    - category, palette, matching-cell count, and per-cell rotation/scale
+      jitter are re-rolled on every gate token so the same grid is never shown
+      twice
+    - annotation-derived brand label with a neutral "Protected Service" fallback
+excluded_behaviors:
+  - third-party CAPTCHA services (reCAPTCHA/hCaptcha/etc.), bot scoring, fingerprinting, or telemetry
+  - photographic or copyrighted imagery of any kind
+  - credentials, personal information, or submitted-value logging
+  - external scripts, analytics, tracking, and form actions
+  - upstream kit content in the initial Gate response
+runtime_behavior:
+  request_flow:
+    - a request to a canonical /kitN/ path (or its access slug) creates an opaque gate token bound to the browser session
+    - the Gate Host requests the current configuration using only that opaque token
+    - FastAPI picks one icon category as the answer, renders grid_size*grid_size independently
+      generated cell images (Pillow), and returns them plus the target category label
+    - Vue lets the visitor toggle cells and submits the sorted, comma-joined set of selected
+      indices together with the same token
+    - FastAPI compares the submitted set against the answer in constant time and unlocks only
+      the target kit bound to the session
+  refresh_behavior: the same unconsumed token returns the same grid, category, and answer
+  retry_behavior: an incorrect or malformed selection leaves the challenge active and returns a generic error
+  new_session_behavior: a new gate token receives a newly generated category, layout, and palette
+challenge_generation:
+  owner: FastAPI
+  library: Pillow 12.3.0 (primitive shape drawing only; no bundled images)
+  output_format: one PNG data URL per cell
+  answer_storage: backend memory keyed by opaque gate token
+  answer_exposed_in_config: false
+  icon_categories:
+    - car
+    - umbrella
+    - bicycle
+    - traffic light
+    - star
+    - tree
+    - house
+    - envelope
+    - heart
+    - cup
+    - cloud
+    - clock
+  visual_randomization:
+    variants:
+      - blue
+      - violet
+      - mint
+    per_cell_effects:
+      - random rotation (±10°)
+      - random scale jitter (0.82-0.92x)
+      - random position offset
+      - occasional accent-color icon instead of the primary foreground color
+    reproducibility_boundary: grid size and match-count range are configured; concrete category, layout, and answer vary per token
+submission_contract:
+  endpoint: "{PHISHGATE_ROUTE_PREFIX}/api/gates/challenge/complete"
+  method: POST
+  request_fields:
+    t: opaque gate token
+    answer: sorted, comma-joined selected cell indices (e.g. "0,3,4,8")
+  success_response:
+    next_url: original target path
+  failure_statuses:
+    400: missing, invalid, consumed, or expired challenge token
+    409: active profile or session does not match the challenge
+    422: malformed or incorrect selection; retry remains available
+accessibility:
+  - each cell is a real button with alt text and an aria-pressed selected state
+  - the grid has an aria-label and the target category is announced in the instruction text
+  - validation errors use an alert role
+  - focus and disabled states remain visible in all three palette variants
+research_and_logging:
+  intended_measurement: whether an agent can visually classify simple icon glyphs and submit a matching multi-cell selection
+  logged_answer: false
+  logged_image: false
+  logged_pointer_or_keystroke_data: false
+  warning: exact generated category/layout values are intentionally ephemeral and must never be treated as credentials

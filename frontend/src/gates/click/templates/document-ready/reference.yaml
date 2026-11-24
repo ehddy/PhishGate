@@ -1,0 +1,29 @@
+schema_version: 1
+template:
+  id: document-ready
+  gate_type: click
+  version: 0.2.0
+  completion_condition: select-continue-button
+reference:
+  local_item_id: 20260901T044759Z-lb01-fig09-document-continue
+  publisher: LevelBlue SpiderLabs
+  title: "The Infrastructure Relay: Inside Multi-Stage Phishing Redirection Chains"
+  url: https://www.levelblue.com/blogs/spiderlabs-blog/the-infrastructure-relay-inside-multi-stage-phishing-redirection-chains
+  locator: Figure 9
+  category: document-preparation-continue
+design_translation:
+  retained_patterns:
+    - pale blue full-page document preparation context
+    - centered white status card with a document icon
+    - completed progress bar followed by one explicit Continue action
+    - short ready-state confirmation before navigation
+  local_adaptations:
+    - annotation-derived service label with a neutral document-service fallback
+    - static completed progress state instead of time-based behavior
+    - responsive local HTML and CSS with no copied logo or screenshot asset
+    - completion returns to the isolated upstream path instead of opening a file
+excluded_behaviors:
+  - timed delays, randomization, downloads, or file generation
+  - credential, email, or submitted-value collection
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions

@@ -1,0 +1,32 @@
+schema_version: 1
+template:
+  id: text-captcha
+  gate_type: challenge
+  version: 0.1.0
+  completion_condition: enter-matching-alphanumeric-text-code
+reference:
+  local_item_id: 20260901T063547Z-esen-fig07-text-captcha-772cfd84
+  publisher: eSentire Threat Response Unit
+  title: "Phish & Chips: Serving Up Tycoon 2FA's Secrets"
+  url: https://www.esentire.com/blog/phish-chips-serving-up-tycoon-2fas-secrets
+  locator: Figure 7
+  category: custom-text-captcha
+design_translation:
+  retained_patterns:
+    - a distorted alphanumeric text image the visitor must transcribe
+    - a compact verification card with one text field and a continue action
+    - "type the characters you see" framing before the real content
+  local_adaptations:
+    - the image is generated locally (Pillow) from an unambiguous alphabet
+      (no I/O/0/1); the answer is held and checked server-side only
+    - matching is case-insensitive; no timing, scoring, or third-party CAPTCHA
+    - palette follows the server-issued challenge variant, not theme_variant
+    - completion returns to the isolated upstream path
+excluded_behaviors:
+  - real CAPTCHA provider integration or client-exposed answers
+  - credential, email, or submitted-value logging
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions
+notes:
+  - single-publisher reference at authoring time; distinct from custom-digit,
+    which is digit-only, by using a full alphanumeric alphabet.

@@ -1,0 +1,101 @@
+dataset,kit_id,directory,brand,relative_path,planned_local_url,brand_source
+phishdecloaker,1,kit1,Microsoft,/kit1/,http://localhost:80/phishdecloaker/kit1/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,2,kit2,Banco de Oro,/kit2/,http://localhost:80/phishdecloaker/kit2/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,3,kit3,Microsoft OneDrive,/kit3/,http://localhost:80/phishdecloaker/kit3/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,4,kit4,Deutsche Kreditbank,/kit4/,http://localhost:80/phishdecloaker/kit4/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,5,kit5,Adobe Acrobat,/kit5/,http://localhost:80/phishdecloaker/kit5/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,6,kit6,N26,/kit6/,http://localhost:80/phishdecloaker/kit6/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,7,kit7,Absa Group,/kit7/,http://localhost:80/phishdecloaker/kit7/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,8,kit8,DHL,/kit8/,http://localhost:80/phishdecloaker/kit8/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,9,kit9,Microsoft,/kit9/,http://localhost:80/phishdecloaker/kit9/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,10,kit10,Correos,/kit10/,http://localhost:80/phishdecloaker/kit10/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,11,kit11,Kempinski Summerland Hotel & Resort Beirut,/kit11/,http://localhost:80/phishdecloaker/kit11/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,12,kit12,Vantage West Credit Union,/kit12/,http://localhost:80/phishdecloaker/kit12/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,13,kit13,NetFlix,/kit13/,http://localhost:80/phishdecloaker/kit13/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,14,kit14,Agencia Tributaria,/kit14/,http://localhost:80/phishdecloaker/kit14/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,15,kit15,Square,/kit15/,http://localhost:80/phishdecloaker/kit15/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,16,kit16,Chronopost,/kit16/,http://localhost:80/phishdecloaker/kit16/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,17,kit17,PayPal,/kit17/,http://localhost:80/phishdecloaker/kit17/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,18,kit18,American Express,/kit18/,http://localhost:80/phishdecloaker/kit18/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,19,kit19,Allegro,/kit19/,http://localhost:80/phishdecloaker/kit19/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,20,kit20,LinkedIn,/kit20/,http://localhost:80/phishdecloaker/kit20/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,21,kit21,virtru,/kit21/,http://localhost:80/phishdecloaker/kit21/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,22,kit22,Citibank,/kit22/,http://localhost:80/phishdecloaker/kit22/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,23,kit23,AOL,/kit23/,http://localhost:80/phishdecloaker/kit23/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,24,kit24,Credit Agricole,/kit24/,http://localhost:80/phishdecloaker/kit24/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,25,kit25,Mercado Pago,/kit25/,http://localhost:80/phishdecloaker/kit25/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,26,kit26,Université de Pau et des Pays de l'Adour (UPPA),/kit26/,http://localhost:80/phishdecloaker/kit26/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,27,kit27,Fifth Third Banki,/kit27/,http://localhost:80/phishdecloaker/kit27/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,28,kit28,Columbia Bank,/kit28/,http://localhost:80/phishdecloaker/kit28/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,29,kit29,Alibaba Mail,/kit29/,http://localhost:80/phishdecloaker/kit29/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,30,kit30,Microsoft OneDrive,/kit30/,http://localhost:80/phishdecloaker/kit30/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,31,kit31,Intesa Sanpaolo,/kit31/,http://localhost:80/phishdecloaker/kit31/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,32,kit32,Santander,/kit32/,http://localhost:80/phishdecloaker/kit32/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,33,kit33,America First Credit Union,/kit33/,http://localhost:80/phishdecloaker/kit33/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,34,kit34,Barclays,/kit34/,http://localhost:80/phishdecloaker/kit34/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,35,kit35,Interac,/kit35/,http://localhost:80/phishdecloaker/kit35/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,36,kit36,USPS,/kit36/,http://localhost:80/phishdecloaker/kit36/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,37,kit37,Wells Fargo,/kit37/,http://localhost:80/phishdecloaker/kit37/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,38,kit38,Yahoo,/kit38/,http://localhost:80/phishdecloaker/kit38/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,39,kit39,XFINITY,/kit39/,http://localhost:80/phishdecloaker/kit39/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,40,kit40,Berliner Sparkasse,/kit40/,http://localhost:80/phishdecloaker/kit40/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,41,kit41,OneDrive,/kit41/,http://localhost:80/phishdecloaker/kit41/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,42,kit42,Standard Bank,/kit42/,http://localhost:80/phishdecloaker/kit42/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,43,kit43,Wells Fargo,/kit43/,http://localhost:80/phishdecloaker/kit43/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,44,kit44,aruba.it,/kit44/,http://localhost:80/phishdecloaker/kit44/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,45,kit45,Bancolombia,/kit45/,http://localhost:80/phishdecloaker/kit45/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,46,kit46,Caisse d’Epargne,/kit46/,http://localhost:80/phishdecloaker/kit46/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,47,kit47,DubaiPay,/kit47/,http://localhost:80/phishdecloaker/kit47/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,48,kit48,Chase Bank,/kit48/,http://localhost:80/phishdecloaker/kit48/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,49,kit49,M&T Bank,/kit49/,http://localhost:80/phishdecloaker/kit49/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,50,kit50,Postmaster,/kit50/,http://localhost:80/phishdecloaker/kit50/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,51,kit51,Volksbanken Raiffeisenbanken,/kit51/,http://localhost:80/phishdecloaker/kit51/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,52,kit52,Facebook,/kit52/,http://localhost:80/phishdecloaker/kit52/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,53,kit53,Huntington Bank,/kit53/,http://localhost:80/phishdecloaker/kit53/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,54,kit54,Commonwealth Bank of Australia,/kit54/,http://localhost:80/phishdecloaker/kit54/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,55,kit55,Orange,/kit55/,http://localhost:80/phishdecloaker/kit55/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,56,kit56,shopify,/kit56/,http://localhost:80/phishdecloaker/kit56/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,57,kit57,Google Drive,/kit57/,http://localhost:80/phishdecloaker/kit57/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,58,kit58,WalletConnect,/kit58/,http://localhost:80/phishdecloaker/kit58/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,59,kit59,Meritrust Credit Union,/kit59/,http://localhost:80/phishdecloaker/kit59/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,60,kit60,Credit Agricole,/kit60/,http://localhost:80/phishdecloaker/kit60/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,61,kit61,Desjardins,/kit61/,http://localhost:80/phishdecloaker/kit61/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,62,kit62,Postbank,/kit62/,http://localhost:80/phishdecloaker/kit62/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,63,kit63,Dropbox,/kit63/,http://localhost:80/phishdecloaker/kit63/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,64,kit64,DocuSign,/kit64/,http://localhost:80/phishdecloaker/kit64/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,65,kit65,dpdgroup,/kit65/,http://localhost:80/phishdecloaker/kit65/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,66,kit66,L'Assurance Maladie,/kit66/,http://localhost:80/phishdecloaker/kit66/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,67,kit67,Adobe Acrobat,/kit67/,http://localhost:80/phishdecloaker/kit67/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,68,kit68,Global Sources,/kit68/,http://localhost:80/phishdecloaker/kit68/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,69,kit69,Microsoft Excel,/kit69/,http://localhost:80/phishdecloaker/kit69/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,70,kit70,SFR,/kit70/,http://localhost:80/phishdecloaker/kit70/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,71,kit71,FedEx,/kit71/,http://localhost:80/phishdecloaker/kit71/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,72,kit72,Citibank,/kit72/,http://localhost:80/phishdecloaker/kit72/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,73,kit73,Royal Credit Union,/kit73/,http://localhost:80/phishdecloaker/kit73/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,74,kit74,GoDaddy,/kit74/,http://localhost:80/phishdecloaker/kit74/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,75,kit75,ADP,/kit75/,http://localhost:80/phishdecloaker/kit75/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,76,kit76,International Card Services,/kit76/,http://localhost:80/phishdecloaker/kit76/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,77,kit77,Israeli Post,/kit77/,http://localhost:80/phishdecloaker/kit77/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,78,kit78,UNI Financial Cooperation,/kit78/,http://localhost:80/phishdecloaker/kit78/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,79,kit79,TD Bank,/kit79/,http://localhost:80/phishdecloaker/kit79/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,80,kit80,ATB Mobile,/kit80/,http://localhost:80/phishdecloaker/kit80/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,81,kit81,HSBC,/kit81/,http://localhost:80/phishdecloaker/kit81/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,82,kit82,Bank of Montreal,/kit82/,http://localhost:80/phishdecloaker/kit82/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,83,kit83,RBC Royal Bank,/kit83/,http://localhost:80/phishdecloaker/kit83/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,84,kit84,IONOS,/kit84/,http://localhost:80/phishdecloaker/kit84/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,85,kit85,AlaskaUSA Federal Credit Union,/kit85/,http://localhost:80/phishdecloaker/kit85/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,86,kit86,French Government,/kit86/,http://localhost:80/phishdecloaker/kit86/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,87,kit87,UOL SAC,/kit87/,http://localhost:80/phishdecloaker/kit87/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,88,kit88,Banco Itaú Paraguay,/kit88/,http://localhost:80/phishdecloaker/kit88/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,89,kit89,Amazon,/kit89/,http://localhost:80/phishdecloaker/kit89/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,90,kit90,Apple,/kit90/,http://localhost:80/phishdecloaker/kit90/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,91,kit91,AT&T,/kit91/,http://localhost:80/phishdecloaker/kit91/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,92,kit92,Australian Government,/kit92/,http://localhost:80/phishdecloaker/kit92/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,93,kit93,Bank of America,/kit93/,http://localhost:80/phishdecloaker/kit93/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,94,kit94,BNP Paribas,/kit94/,http://localhost:80/phishdecloaker/kit94/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,95,kit95,eBay,/kit95/,http://localhost:80/phishdecloaker/kit95/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,96,kit96,ING Group,/kit96/,http://localhost:80/phishdecloaker/kit96/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,97,kit97,Instagram,/kit97/,http://localhost:80/phishdecloaker/kit97/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,98,kit98,MetaMask,/kit98/,http://localhost:80/phishdecloaker/kit98/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,99,kit99,SingTel,/kit99/,http://localhost:80/phishdecloaker/kit99/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md
+phishdecloaker,100,kit100,Société Générale,/kit100/,http://localhost:80/phishdecloaker/kit100/,https://github.com/code-philia/PhishDecloaker/blob/main/cloaken/phishing_kits/README.md

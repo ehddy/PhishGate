@@ -1,0 +1,32 @@
+schema_version: 1
+template:
+  id: area-select
+  gate_type: challenge
+  version: 0.1.0
+  completion_condition: click-the-region-containing-the-requested-item
+reference:
+  local_item_ids:
+    - 20260901T045338Z-pd01-fig04-area-selection
+    - 20260901T045338Z-pd01-fig04-image-selection
+  publishers:
+    - 33rd USENIX Security Symposium
+  category: area-selection-captcha
+design_translation:
+  retained_patterns:
+    - a single scene image in which the visitor must click a named object
+    - one target object among hand-drawn distractors, no visible cell borders
+    - verification succeeds only when the correct area is chosen
+  local_adaptations:
+    - the scene is divided into regions server-side; the answer is the target
+      region index (not pixel coordinates), checked server-side only
+    - icons are hand-coded primitives (shared with image-grid), no copied assets
+    - region columns/rows configurable; palette follows the challenge variant
+    - completion returns to the isolated upstream path
+excluded_behaviors:
+  - real CAPTCHA provider integration or client-exposed answers
+  - mouse-coordinate, credential, or submitted-value logging
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions
+notes:
+  - single-publisher reference (USENIX PhishDecloaker Figure 4); distinct from
+    image-grid, which uses bordered multi-select cells rather than one scene.

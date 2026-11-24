@@ -1,0 +1,31 @@
+schema_version: 1
+template:
+  id: security-check
+  gate_type: click
+  version: 0.1.0
+  completion_condition: select-continue-button
+reference:
+  local_item_ids:
+    - 20260901T045726Z-u42cys-fig10b-before-you-continue
+    - 20260901T063547Z-vlxy-security-check-next-5948cb2e
+  publishers:
+    - Palo Alto Networks Unit 42
+    - Volexity
+  category: before-you-continue-security-interstitial
+design_translation:
+  retained_patterns:
+    - full-page security-checkpoint interstitial shown before the real content
+    - centered white card with a security/shield mark and a short heading
+    - brief "why am I seeing this" reassurance list with no account prompt
+    - one explicit Continue action that proceeds to the requested page
+  local_adaptations:
+    - annotation-derived site label with a neutral "This site" fallback
+    - CSS-only shield mark and responsive local-only layout
+    - information density follows copy_variant; no timed or randomized behavior
+    - completion returns to the isolated upstream path
+excluded_behaviors:
+  - device-code entry, OAuth, or any real authentication flow
+  - credential, email, or submitted-value collection
+  - clipboard, shell, or copy-paste-run instructions (ClickFix is out of scope)
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions

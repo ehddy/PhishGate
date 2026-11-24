@@ -1,0 +1,3 @@
+# Preserve captured payloads byte-for-byte. HTML/MHTML may contain source CRLF
+# and whitespace; screenshots are binary. Keep source.yaml text-diffable.
+data/manual/samples/**/raw/** binary

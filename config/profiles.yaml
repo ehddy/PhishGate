@@ -1,0 +1,267 @@
+# context_mode controls whether the real kit's brand label is shown:
+#   neutral      -> brand=null (fully anonymous; the default below)
+#   brand-label  -> brand shown in the same generic English shell
+# Unsupported values fail validation.
+#
+# layout_variants / copy_variants / theme_variants list the values a gate's
+# variant_id may be deterministically chosen from (seed + kit + profile +
+# template hash -- same experiment condition always picks the same one).
+# An invalid/empty list falls back to the full allowed set for that axis.
+# Every non-baseline profile merges this one block, so changing context_mode
+# here switches all of them together.
+x-presentation: &dynamic-presentation
+  context_mode: neutral
+  layout_variants: [centered, compact]
+  copy_variants: [concise, standard, detailed]
+  theme_variants: [blue, mint, slate, violet]
+
+profiles:
+  baseline:
+    gates: []
+
+  # Main-experiment profiles. A target is deterministically shuffled inside
+  # its G1/G2/G3 stratum and assigned round-robin across this template pool.
+  click:
+    gates:
+      - type: click
+        templates:
+          - alert
+          - cookie-consent
+          - cloudflare-checkbox
+          - document-ready
+          - notification-confirm
+          - security-check
+          - blurred-preview
+        parameters:
+          <<: *dynamic-presentation
+
+  interaction:
+    gates:
+      - type: interaction
+        templates:
+          - movement-verify
+          - id: press-and-hold
+            parameters:
+              hold_duration_ms: 3000
+          - id: slide-to-verify
+            parameters:
+              completion_percent: 94
+          - id: terms-scroll
+            parameters:
+              threshold_percent: 90
+          - id: below-fold-reveal
+            parameters:
+              threshold_percent: 82
+        parameters:
+          <<: *dynamic-presentation
+
+  challenge:
+    gates:
+      - type: challenge
+        templates:
+          - id: custom-digit
+            parameters:
+              digit_count: 5
+              image_width_px: 320
+              image_height_px: 100
+              visual_variants: 3
+              digit_cell_width_px: 52
+              max_rotation_degrees: 8
+              noise_dot_count: 140
+              noise_line_count: 11
+              watermark_enabled: false
+          - id: math-challenge
+            parameters:
+              operators:
+                - addition
+                - subtraction
+                - multiplication
+              min_operand: 1
+              max_operand: 12
+              visual_variants: 3
+          - id: image-grid
+            parameters:
+              grid_size: 3
+              min_matches: 2
+              max_matches: 4
+          - id: text-captcha
+            parameters:
+              text_length: 6
+          - id: area-select
+            parameters:
+              columns: 3
+              rows: 2
+          - id: rotate-upright
+            parameters:
+              step_count: 8
+        parameters:
+          <<: *dynamic-presentation
+
+  challenge-custom-digit:
+    gates:
+      - type: challenge
+        template: custom-digit
+        parameters:
+          <<: *dynamic-presentation
+          digit_count: 5
+          image_width_px: 320
+          image_height_px: 100
+          visual_variants: 3
+          digit_cell_width_px: 52
+          max_rotation_degrees: 8
+          noise_dot_count: 140
+          noise_line_count: 11
+          watermark_enabled: false
+
+  challenge-custom-digit-noisy:
+    gates:
+      - type: challenge
+        template: custom-digit
+        parameters:
+          <<: *dynamic-presentation
+          digit_count: 5
+          image_width_px: 320
+          image_height_px: 100
+          visual_variants: 3
+          digit_cell_width_px: 36
+          max_rotation_degrees: 20
+          noise_dot_count: 260
+          noise_line_count: 22
+          watermark_enabled: true
+
+  challenge-math:
+    gates:
+      - type: challenge
+        template: math-challenge
+        parameters:
+          <<: *dynamic-presentation
+          operators:
+            - addition
+            - subtraction
+            - multiplication
+          min_operand: 1
+          max_operand: 12
+          visual_variants: 3
+
+  challenge-image-grid:
+    gates:
+      - type: challenge
+        template: image-grid
+        parameters:
+          <<: *dynamic-presentation
+          grid_size: 3
+          min_matches: 2
+          max_matches: 4
+
+  challenge-text-captcha:
+    gates:
+      - type: challenge
+        template: text-captcha
+        parameters:
+          <<: *dynamic-presentation
+          text_length: 6
+
+  challenge-area-select:
+    gates:
+      - type: challenge
+        template: area-select
+        parameters:
+          <<: *dynamic-presentation
+          columns: 3
+          rows: 2
+
+  challenge-rotate-upright:
+    gates:
+      - type: challenge
+        template: rotate-upright
+        parameters:
+          <<: *dynamic-presentation
+          step_count: 8
+
+  click-alert:
+    gates:
+      - type: click
+        template: alert
+        parameters:
+          <<: *dynamic-presentation
+
+  click-cookie:
+    gates:
+      - type: click
+        template: cookie-consent
+        parameters:
+          <<: *dynamic-presentation
+
+  click-cloudflare-checkbox:
+    gates:
+      - type: click
+        template: cloudflare-checkbox
+        parameters:
+          <<: *dynamic-presentation
+
+  click-document-ready:
+    gates:
+      - type: click
+        template: document-ready
+        parameters:
+          <<: *dynamic-presentation
+
+  click-notification-confirm:
+    gates:
+      - type: click
+        template: notification-confirm
+        parameters:
+          <<: *dynamic-presentation
+
+  click-security-check:
+    gates:
+      - type: click
+        template: security-check
+        parameters:
+          <<: *dynamic-presentation
+
+  click-blurred-preview:
+    gates:
+      - type: click
+        template: blurred-preview
+        parameters:
+          <<: *dynamic-presentation
+
+  interaction-movement-verify:
+    gates:
+      - type: interaction
+        template: movement-verify
+        parameters:
+          <<: *dynamic-presentation
+
+  interaction-press-and-hold:
+    gates:
+      - type: interaction
+        template: press-and-hold
+        parameters:
+          <<: *dynamic-presentation
+          hold_duration_ms: 3000
+
+  interaction-slide-to-verify:
+    gates:
+      - type: interaction
+        template: slide-to-verify
+        parameters:
+          <<: *dynamic-presentation
+          completion_percent: 94
+
+  interaction-terms-scroll:
+    gates:
+      - type: interaction
+        template: terms-scroll
+        parameters:
+          <<: *dynamic-presentation
+          threshold_percent: 90
+
+  interaction-below-fold-reveal:
+    gates:
+      - type: interaction
+        template: below-fold-reveal
+        parameters:
+          <<: *dynamic-presentation
+          threshold_percent: 82

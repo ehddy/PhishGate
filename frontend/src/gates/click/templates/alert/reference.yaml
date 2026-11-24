@@ -1,0 +1,26 @@
+schema_version: 1
+template:
+  id: alert
+  gate_type: click
+  version: 0.2.0
+  completion_condition: dismiss-native-alert
+reference:
+  local_item_id: 20260901T045338Z-cp01-fig04a-popup-initial
+  publisher: IEEE Symposium on Security and Privacy
+  title: "CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing"
+  url: https://sefcom.asu.edu/publications/crawlphish-oakland21.pdf
+  locator: "Figure 4(a), PDF viewer page 8"
+design_translation:
+  retained_patterns:
+    - browser-native JavaScript alert shown before protected content
+    - one explicit acknowledgement click
+    - sparse neutral page behind the alert
+  local_adaptations:
+    - annotation-derived brand label with neutral protected-content language
+    - responsive local-only loading page
+    - no copied brand logos or external assets
+excluded_behaviors:
+  - credential or email collection
+  - native notification permission request
+  - CAPTCHA
+  - external scripts, analytics, and form actions

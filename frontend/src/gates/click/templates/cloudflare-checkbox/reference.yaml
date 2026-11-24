@@ -1,0 +1,31 @@
+schema_version: 1
+template:
+  id: cloudflare-checkbox
+  gate_type: click
+  version: 0.2.0
+  completion_condition: select-human-verification-checkbox
+reference:
+  local_item_ids:
+    - 20260901T050728Z-phrp-fig03-fake-cloudflare-captcha
+    - 20260901T084448Z-sophos-svg-fig07-minimal-turnstile-1f33e585
+    - 20260901T081137Z-ahnsvg-fig03-fake-cloudflare-e2909941
+  publishers:
+    - phish.report
+    - Sophos X-Ops
+    - AhnLab Security Intelligence Center
+  category: fake-cloudflare-checkbox-verification
+design_translation:
+  retained_patterns:
+    - sparse white interstitial with a short connection-security heading
+    - compact light-gray human-verification checkbox widget
+    - orange cloud provider mark with privacy and help labels
+    - subdued automatic-redirect copy and connection footer
+  local_adaptations:
+    - annotation-derived site label with a neutral fallback
+    - CSS-only provider mark and responsive local-only layout
+    - fixed non-identifying local research Ray ID
+excluded_behaviors:
+  - real CAPTCHA or Turnstile integration and token validation
+  - IP address, fingerprint, credential, or submitted-value collection
+  - upstream kit content in the initial Gate response
+  - external scripts, analytics, tracking, and form actions
