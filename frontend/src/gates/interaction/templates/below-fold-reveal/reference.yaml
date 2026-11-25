@@ -7,18 +7,16 @@ template:
   parameters:
     threshold_percent: 82
 references:
-  - local_item_id: 20260904T131214Z-itsolver-above-fold-scroll-hide-b2f70e41
-    publisher: IT Solver Support
-    title: Gmail Bounce Phishing Email Analysis
-    url: https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis
-    locator: above-the-fold mobile screenshot
-    research_scope: plausible delivery-notification content visible before scrolling
-  - local_item_id: 20260904T131215Z-itsolver-below-fold-scroll-reveal-d8a41c36
-    publisher: IT Solver Support
-    title: Gmail Bounce Phishing Email Analysis
-    url: https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis
-    locator: below-the-fold mobile screenshot
-    research_scope: concealed lower content reached only after scrolling
+  - publisher: SANS Internet Storm Center
+    title: Nice Phishing Sample Delivering Trickbot
+    url: https://isc.sans.edu/diary/23641
+    locator: window.onscroll handler that reveals content only after scrolling
+    research_scope: content revealed only after the visitor scrolls the page
+  - publisher: IEEE/IFIP DSN 2025 (Boulila et al.)
+    title: A Closer Look At Modern Evasive Phishing Emails
+    url: https://doi.org/10.1109/DSN64029.2025.00066
+    locator: client-side user-interaction cloaking discussion
+    research_scope: scrolling classified as a content-reveal interaction
 design_translation:
   retained_patterns:
     - a familiar mail-reading layout provides a natural reason to scroll
