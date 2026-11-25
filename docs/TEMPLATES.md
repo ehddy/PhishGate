@@ -30,6 +30,7 @@ Each template is modeled on gates reported in academic studies and industry thre
 | P. Zhang et al., "[CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing](https://sefcom.asu.edu/publications/crawlphish-oakland21.pdf)," IEEE S&P, 2021 | `alert`, `notification-confirm` |
 | X. Teoh et al., "[PhishDecloaker: Detecting CAPTCHA-cloaked Phishing Websites via Hybrid Vision-based Interactive Models](https://www.usenix.org/conference/usenixsecurity24/presentation/teoh)," USENIX Security, 2024 | `area-select`, `rotate-upright` |
 | E. Boulila et al., "[A Closer Look At Modern Evasive Phishing Emails](https://doi.org/10.1109/DSN64029.2025.00066)," IEEE/IFIP DSN, 2025 | `terms-scroll`, `below-fold-reveal` |
+| H. Zhang et al., "[TraceScope: Interactive URL Triage via Decoupled Checklist Adjudication](https://arxiv.org/abs/2604.21840)," arXiv preprint arXiv:2604.21840, 2026 | `cloudflare-checkbox`, `slide-to-verify`, `math-challenge` |
 
 **Industry reports**
 
@@ -42,7 +43,9 @@ Each template is modeled on gates reported in academic studies and industry thre
 | Keep Aware | [Fake Cookie Consent Used as a Phishing Gateway](https://keepaware.com/blog/fake-cookie-consent-used-as-a-phishing-gateway) | `cookie-consent` |
 | Keep Aware | [Gated Phishing and How BEC Continues to Evade Security Filters](https://keepaware.com/blog/gated-phishing-and-how-bec-continues-to-evade-security-filters) | `custom-digit` |
 | LevelBlue SpiderLabs | [The Infrastructure Relay: Inside Multi-Stage Phishing Redirection Chains](https://www.levelblue.com/blogs/spiderlabs-blog/the-infrastructure-relay-inside-multi-stage-phishing-redirection-chains) | `document-ready` |
+| McAfee Labs | [New Wave of SHTML Phishing Attacks](https://www.mcafee.com/blogs/other-blogs/mcafee-labs/shtml-phishing-attack-with-blurred-image/) | `blurred-preview` |
 | MalwareTips | [The Truth About Cloudflare-captcha.com and Its Spam Pop-ups](https://malwaretips.com/blogs/cloudflare-captcha-com/) | `notification-confirm` |
+| Microsoft Threat Intelligence | [TerminalFix campaign deploys a reverse tunnel through multistage intrusion](https://www.microsoft.com/en-us/security/blog/2026/08/28/terminalfix-campaign-deploys-reverse-tunnel-through-multistage-intrusion/) | `cloudflare-checkbox` |
 | Netskope Threat Labs | [New Evasive Campaign Delivers LegionLoader via Fake CAPTCHA & CloudFlare Turnstile](https://threatlabs.netskope.com/blog/2025/04/new-evasive-campaign-delivers-legionloader-via-fake-captcha-cloudflare-turnstile) | `notification-confirm` |
 | Palo Alto Networks Unit 42 | [Cybersquatting: Attackers Mimicking Domains of Major Brands Including Facebook, Apple, Amazon and Netflix to Scam Consumers](https://unit42.paloaltonetworks.com/cybersquatting/) | `security-check` |
 | Palo Alto Networks Unit 42 | [Discovering CAPTCHA Protected Phishing Campaigns](https://unit42.paloaltonetworks.com/captcha-protected-phishing/) | `image-grid` |

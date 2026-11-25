@@ -11,7 +11,13 @@ reference:
   publishers:
     - Zscaler ThreatLabz
     - SANS Internet Storm Center
+    - McAfee Labs
   category: blurred-document-preview-unlock
+  additional_sources:
+    - publisher: McAfee Labs
+      title: New Wave of SHTML Phishing Attacks
+      url: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/shtml-phishing-attack-with-blurred-image/
+      locator: "Figures 3-5: blurred fake PDF, Excel, and shipping documents behind a sign-in prompt"
 design_translation:
   retained_patterns:
     - a blurred document/content sheet sitting behind a centered modal

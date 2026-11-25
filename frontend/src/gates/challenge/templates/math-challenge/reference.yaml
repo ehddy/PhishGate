@@ -19,6 +19,11 @@ reference:
   url: https://www.proofpoint.com/us/blog/threat-insight/cybercriminals-abuse-ai-website-creation-app-phishing
   locator: "Figure 2: Phishing CAPTCHA"
   category: branded-math-captcha-continue
+  additional_sources:
+    - publisher: arXiv preprint (Zhang et al.)
+      title: "TraceScope: Interactive URL Triage via Decoupled Checklist Adjudication"
+      url: https://arxiv.org/abs/2604.21840
+      locator: "Figure 1 (numeric CAPTCHA) and Figure 9 (Cloudflare-branded arithmetic CAPTCHA cases)"
 design_translation:
   retained_patterns:
     - full-page architectural background with a centered translucent verification card

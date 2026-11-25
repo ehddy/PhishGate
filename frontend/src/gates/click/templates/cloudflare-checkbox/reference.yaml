@@ -11,9 +11,20 @@ reference:
     - 20260901T081137Z-ahnsvg-fig03-fake-cloudflare-e2909941
   publishers:
     - phish.report
+    - Microsoft Threat Intelligence
     - Sophos X-Ops
     - AhnLab Security Intelligence Center
+    - arXiv preprint (Zhang et al.)
   category: fake-cloudflare-checkbox-verification
+  additional_sources:
+    - publisher: Microsoft Threat Intelligence
+      title: TerminalFix campaign deploys a reverse tunnel through multistage intrusion
+      url: https://www.microsoft.com/en-us/security/blog/2026/08/28/terminalfix-campaign-deploys-reverse-tunnel-through-multistage-intrusion/
+      locator: "Figure 2: Fake Cloudflare Turnstile verification displayed on a compromised website"
+    - publisher: arXiv preprint (Zhang et al.)
+      title: "TraceScope: Interactive URL Triage via Decoupled Checklist Adjudication"
+      url: https://arxiv.org/abs/2604.21840
+      locator: "Figure 18: checkbox-style challenge, verifying state, and redirect"
 design_translation:
   retained_patterns:
     - sparse white interstitial with a short connection-security heading

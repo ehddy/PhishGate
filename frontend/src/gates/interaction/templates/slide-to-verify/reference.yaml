@@ -23,6 +23,11 @@ references:
     url: https://www.xorlab.com/en/blog/abusing-adobe-and-qr-links-for-aitm-microsoft-365-phishing
     locator: "verification steps collage: slide-to-verify panel"
     observed_pattern: account-protection explanation followed by a thin slide-to-verify control
+  - publisher: arXiv preprint (Zhang et al.)
+    title: "TraceScope: Interactive URL Triage via Decoupled Checklist Adjudication"
+    url: https://arxiv.org/abs/2604.21840
+    locator: "Figure 17: slider-style drag challenge"
+    observed_pattern: security-verification card that requires dragging a key onto a lock
 design_translation:
   retained_patterns:
     - dark low-detail page background that visually isolates one verification card
