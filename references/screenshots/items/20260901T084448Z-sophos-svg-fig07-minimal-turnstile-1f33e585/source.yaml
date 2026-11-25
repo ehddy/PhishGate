@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T084448Z-sophos-svg-fig07-minimal-turnstile-1f33e585
+collected_at: '2026-09-01T08:44:48Z'
+gate_type: click
+research_role: gate-candidate
+pattern: minimal-cloudflare-verification
+source:
+  publisher: Sophos X-Ops
+  title: SVG phishing - the vector is the vector
+  url: https://www.sophos.com/en-us/blog/svg-phishing
+  locator: 'Image caption: A CAPTCHA protects a phishing site'
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

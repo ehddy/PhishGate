@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T045338Z-cp01-fig04a-popup-initial
+collected_at: '2026-09-01T04:53:38Z'
+gate_type: click
+research_role: gate-candidate
+pattern: javascript-alert-popup
+source:
+  publisher: IEEE Symposium on Security and Privacy
+  title: 'CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing'
+  url: https://sefcom.asu.edu/publications/crawlphish-oakland21.pdf
+  locator: Figure 4(a), PDF viewer page 8
+collection_method: paper-pdf-figure-extraction
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

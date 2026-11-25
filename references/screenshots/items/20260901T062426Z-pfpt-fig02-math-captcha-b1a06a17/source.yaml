@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T062426Z-pfpt-fig02-math-captcha-b1a06a17
+collected_at: '2026-09-01T06:24:26Z'
+gate_type: click
+research_role: gate-candidate
+pattern: branded-math-captcha-continue
+source:
+  publisher: Proofpoint
+  title: Cybercriminals Abuse AI Website Creation App For Phishing
+  url: https://www.proofpoint.com/us/blog/threat-insight/cybercriminals-abuse-ai-website-creation-app-phishing
+  locator: 'Figure 2: Phishing CAPTCHA'
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

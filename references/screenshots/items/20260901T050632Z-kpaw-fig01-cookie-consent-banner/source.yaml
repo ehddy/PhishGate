@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T050632Z-kpaw-fig01-cookie-consent-banner
+collected_at: '2026-09-01T05:07:28Z'
+gate_type: click
+research_role: gate-candidate
+pattern: cookie-consent-banner
+source:
+  publisher: Keep Aware
+  title: Fake Cookie Consent Used as a Phishing Gateway
+  url: https://keepaware.com/blog/fake-cookie-consent-used-as-a-phishing-gateway
+  locator: cookie-consent modal figure
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

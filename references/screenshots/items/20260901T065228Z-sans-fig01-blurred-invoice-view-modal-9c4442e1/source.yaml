@@ -1,0 +1,16 @@
+schema_version: 1
+item_id: 20260901T065228Z-sans-fig01-blurred-invoice-view-modal-9c4442e1
+collected_at: '2026-09-01T06:52:28Z'
+gate_type: click
+research_role: gate-candidate
+pattern: blurred-invoice-view-modal
+source:
+  publisher: SANS Internet Storm Center
+  title: Phishing Campaign with Blurred Images
+  url: https://isc.sans.edu/diary/21207
+  locator: blurred Excel invoice with Adobe-styled credential modal
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+notes: blurred-document cloaking behind 'view invoice' modal; email shown is the SANS author's own demo address (no third-party PII)
+image_included: false

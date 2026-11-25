@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T063547Z-zscv-fig10-blurred-security-challenge-e0ee9f1d
+collected_at: '2026-09-01T06:35:47Z'
+gate_type: click
+research_role: gate-candidate
+pattern: blurred-background-security-challenge
+source:
+  publisher: Zscaler ThreatLabz
+  title: New Voicemail-Themed Phishing Attacks
+  url: https://www.zscaler.com/fr/blogs/security-research/new-voicemail-themed-phishing-attacks-use-evasion-techniques-and-steal-credentials
+  locator: 'Figure 10: Google reCAPTCHA used as a security challenge for evasion'
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

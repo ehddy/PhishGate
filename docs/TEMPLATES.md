@@ -19,7 +19,7 @@ The gallery below shows every template with each value of each axis. The other a
 
 ## Design references
 
-Each template is modeled on gates reported in academic studies and industry threat-intelligence reports. The main [README](../README.md#template-references) maps every template to its sources. For each template, the figure used, the retained design patterns, and the local adaptations are recorded in `frontend/src/gates/<family>/templates/<template>/reference.yaml`. No third-party scripts, logos, tracking, form actions, or real CAPTCHA services are used.
+Each template is modeled on gates reported in academic studies and industry threat-intelligence reports. The main [README](../README.md#template-references) maps every template to its sources. For each template, the figure used, the retained design patterns, and the local adaptations are recorded in `frontend/src/gates/<family>/templates/<template>/reference.yaml`. Each `local_item_id` in those files resolves to a provenance record in [references/screenshots](../references/screenshots/README.md); the figures themselves are not redistributed. No third-party scripts, logos, tracking, form actions, or real CAPTCHA services are used.
 
 ## References
 

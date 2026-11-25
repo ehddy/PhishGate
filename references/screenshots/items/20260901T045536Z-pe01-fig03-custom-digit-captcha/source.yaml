@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T045536Z-pe01-fig03-custom-digit-captcha
+collected_at: '2026-09-01T04:55:36Z'
+gate_type: click
+research_role: gate-candidate
+pattern: custom-five-digit-captcha
+source:
+  publisher: PhishEye
+  title: 'Hotel Booking Phishing: Reservation Hijack'
+  url: https://phisheye.com/blog/hotel-booking-phishing-reservation-hijack
+  locator: Figure 3
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

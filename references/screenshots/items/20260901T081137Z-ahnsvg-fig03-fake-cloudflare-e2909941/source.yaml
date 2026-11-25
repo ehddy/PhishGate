@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T081137Z-ahnsvg-fig03-fake-cloudflare-e2909941
+collected_at: '2026-09-01T08:11:37Z'
+gate_type: click
+research_role: gate-candidate
+pattern: fake-cloudflare-checkbox
+source:
+  publisher: AhnLab Security Intelligence Center
+  title: SVG Phishing Malware Distributed with Analysis-Obstruction Features
+  url: https://asec.ahnlab.com/ko/87057/
+  locator: Figure 3
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

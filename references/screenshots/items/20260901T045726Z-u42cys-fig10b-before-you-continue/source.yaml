@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T045726Z-u42cys-fig10b-before-you-continue
+collected_at: '2026-09-01T04:57:26Z'
+gate_type: click
+research_role: gate-candidate
+pattern: multi-step-before-you-continue
+source:
+  publisher: Palo Alto Networks Unit 42
+  title: 'Cybersquatting: Attackers Mimicking Domains of Major Brands Including Facebook, Apple, Amazon and Netflix to Scam Consumers'
+  url: https://unit42.paloaltonetworks.com/cybersquatting/
+  locator: Figure 10(b)
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

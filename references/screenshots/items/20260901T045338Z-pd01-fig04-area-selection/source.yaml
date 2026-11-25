@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T045338Z-pd01-fig04-area-selection
+collected_at: '2026-09-01T04:53:38Z'
+gate_type: click
+research_role: gate-candidate
+pattern: area-selection-captcha
+source:
+  publisher: 33rd USENIX Security Symposium
+  title: 'PhishDecloaker: Detecting CAPTCHA-cloaked Phishing Websites via Hybrid Vision-based Interactive Models'
+  url: https://www.usenix.org/system/files/usenixsecurity24-teoh.pdf
+  locator: Figure 4 area-selection crop, PDF viewer page 6
+collection_method: paper-pdf-figure-extraction
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

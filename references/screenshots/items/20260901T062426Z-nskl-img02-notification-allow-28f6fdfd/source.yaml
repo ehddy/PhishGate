@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T062426Z-nskl-img02-notification-allow-28f6fdfd
+collected_at: '2026-09-01T06:24:26Z'
+gate_type: click
+research_role: gate-evidence
+pattern: browser-notification-allow-human-verification
+source:
+  publisher: Netskope Threat Labs
+  title: New Evasive Campaign Delivers LegionLoader via Fake CAPTCHA & CloudFlare Turnstile
+  url: https://www.netskope.com/blog/new-evasive-campaign-delivers-legionloader-via-fake-captcha-cloudflare-turnstile
+  locator: Malicious page requesting enablement of notification
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

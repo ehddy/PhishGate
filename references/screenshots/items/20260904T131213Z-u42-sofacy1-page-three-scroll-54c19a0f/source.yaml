@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260904T131213Z-u42-sofacy1-page-three-scroll-54c19a0f
+collected_at: '2026-09-04T13:12:13Z'
+gate_type: viewport
+research_role: gate-evidence
+pattern: document-page-viewport-trigger
+source:
+  publisher: Palo Alto Networks Unit 42
+  title: Sofacy Uses DealersChoice to Target European Government Agency
+  url: https://unit42.paloaltonetworks.com/unit42-sofacy-uses-dealerschoice-target-european-government-agency/
+  locator: Figure 1, page-three document object reached after scrolling
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

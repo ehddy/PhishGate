@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T045638Z-u42cap-fig01-recaptcha-protected
+collected_at: '2026-09-01T04:56:38Z'
+gate_type: click
+research_role: gate-candidate
+pattern: recaptcha-protected-landing-page
+source:
+  publisher: Palo Alto Networks Unit 42
+  title: Discovering CAPTCHA Protected Phishing Campaigns
+  url: https://unit42.paloaltonetworks.com/captcha-protected-phishing/
+  locator: Figure 1
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

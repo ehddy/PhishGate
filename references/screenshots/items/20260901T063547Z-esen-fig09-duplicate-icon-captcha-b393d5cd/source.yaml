@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T063547Z-esen-fig09-duplicate-icon-captcha-b393d5cd
+collected_at: '2026-09-01T06:35:47Z'
+gate_type: click
+research_role: gate-candidate
+pattern: duplicate-icon-selection-captcha
+source:
+  publisher: eSentire Threat Response Unit
+  title: 'Phish & Chips: Serving Up Tycoon 2FA''s Secrets'
+  url: https://www.esentire.com/blog/phish-chips-serving-up-tycoon-2fas-secrets
+  locator: 'Figure 9: New CAPTCHA verification in Tycoon 2FA'
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

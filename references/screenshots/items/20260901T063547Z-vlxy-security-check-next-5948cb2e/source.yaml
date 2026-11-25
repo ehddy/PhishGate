@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T063547Z-vlxy-security-check-next-5948cb2e
+collected_at: '2026-09-01T06:35:47Z'
+gate_type: click
+research_role: gate-candidate
+pattern: microsoft-teams-device-code-interstitial
+source:
+  publisher: Volexity
+  title: Multiple Russian Threat Actors Targeting Microsoft Device Code Authentication
+  url: https://www.volexity.com/blog/2025/02/13/multiple-russian-threat-actors-targeting-microsoft-device-code-authentication/
+  locator: UTA0307 Microsoft security-check interstitial before the Next button
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

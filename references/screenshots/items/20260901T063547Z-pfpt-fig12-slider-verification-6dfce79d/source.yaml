@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T063547Z-pfpt-fig12-slider-verification-6dfce79d
+collected_at: '2026-09-01T06:35:47Z'
+gate_type: pointer
+research_role: gate-candidate
+pattern: drag-slider-identity-verification
+source:
+  publisher: Proofpoint
+  title: 'TA4922: The Suspected Chinese Crime Group is Going Global'
+  url: https://www.proofpoint.com/us/blog/threat-insight/ta4922-suspected-chinese-crime-group-going-global
+  locator: 'Figure 12: CAPTCHA-style verification gate on the initial landing page'
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

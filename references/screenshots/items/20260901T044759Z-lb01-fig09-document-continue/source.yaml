@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T044759Z-lb01-fig09-document-continue
+collected_at: '2026-09-01T04:47:59Z'
+gate_type: click
+research_role: gate-candidate
+pattern: document-preparation-continue
+source:
+  publisher: LevelBlue SpiderLabs
+  title: 'The Infrastructure Relay: Inside Multi-Stage Phishing Redirection Chains'
+  url: https://www.levelblue.com/blogs/spiderlabs-blog/the-infrastructure-relay-inside-multi-stage-phishing-redirection-chains
+  locator: Figure 9
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false

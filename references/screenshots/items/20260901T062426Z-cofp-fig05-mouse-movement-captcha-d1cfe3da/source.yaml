@@ -1,0 +1,15 @@
+schema_version: 1
+item_id: 20260901T062426Z-cofp-fig05-mouse-movement-captcha-d1cfe3da
+collected_at: '2026-09-01T06:24:26Z'
+gate_type: pointer
+research_role: gate-candidate
+pattern: mouse-movement-dashed-area
+source:
+  publisher: Cofense
+  title: 'Immunity Evasion: Defeating Security with Active Measures & Long-Lived Domains'
+  url: https://cofense.com/blog/immunity-evasion-defeating-security-with-active-measures-long-lived-domains
+  locator: 'Figure 5: Custom CAPTCHA using mouse movement to confirm a human'
+collection_method: published-report-figure
+live_phishing_visited: false
+rights: third-party-copyright-research-reference
+image_included: false
