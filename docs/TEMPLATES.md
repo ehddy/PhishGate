@@ -29,7 +29,7 @@ Each template is modeled on gates reported in academic studies and industry thre
 |---|---|
 | P. Zhang et al., "[CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing](https://sefcom.asu.edu/publications/crawlphish-oakland21.pdf)," IEEE S&P, 2021 | `alert`, `notification-confirm` |
 | X. Teoh et al., "[PhishDecloaker: Detecting CAPTCHA-cloaked Phishing Websites via Hybrid Vision-based Interactive Models](https://www.usenix.org/conference/usenixsecurity24/presentation/teoh)," USENIX Security, 2024 | `area-select`, `rotate-upright` |
-| E. Boulila et al., "[A Closer Look At Modern Evasive Phishing Emails](https://doi.org/10.1109/DSN64029.2025.00066)," IEEE/IFIP DSN, 2025 | `terms-scroll` |
+| E. Boulila et al., "[A Closer Look At Modern Evasive Phishing Emails](https://doi.org/10.1109/DSN64029.2025.00066)," IEEE/IFIP DSN, 2025 | `terms-scroll`, `below-fold-reveal` |
 
 **Industry reports**
 
@@ -39,7 +39,6 @@ Each template is modeled on gates reported in academic studies and industry thre
 | Cofense | [Immunity Evasion: Defeating Security with Active Measures & Long-Lived Domains](https://cofense.com/blog/immunity-evasion-defeating-security-with-active-measures-long-lived-domains) | `movement-verify` |
 | eSentire TRU | [Phish & Chips: Serving Up Tycoon 2FA's Secrets](https://www.esentire.com/blog/phish-chips-serving-up-tycoon-2fas-secrets) | `image-grid`, `text-captcha` |
 | HUMAN Security | [Human Challenge: Improved Bot Protection with Better User Experience](https://www.humansecurity.com/learn/blog/human-challenge-improved-bot-protection-with-better-user-experience/) | `press-and-hold` |
-| IT Solver | [Gmail Bounce Phishing Email Analysis](https://support.itsolver.net/hc/en-au/articles/14243666809103-Gmail-Bounce-Phishing-Email-Analysis) | `terms-scroll`, `below-fold-reveal` |
 | Keep Aware | [Fake Cookie Consent Used as a Phishing Gateway](https://keepaware.com/blog/fake-cookie-consent-used-as-a-phishing-gateway) | `cookie-consent` |
 | Keep Aware | [Gated Phishing and How BEC Continues to Evade Security Filters](https://keepaware.com/blog/gated-phishing-and-how-bec-continues-to-evade-security-filters) | `custom-digit` |
 | LevelBlue SpiderLabs | [The Infrastructure Relay: Inside Multi-Stage Phishing Redirection Chains](https://www.levelblue.com/blogs/spiderlabs-blog/the-infrastructure-relay-inside-multi-stage-phishing-redirection-chains) | `document-ready` |
@@ -52,7 +51,7 @@ Each template is modeled on gates reported in academic studies and industry thre
 | phish.report | [Evading security scanners with fake Cloudflare interstitials](https://phish.report/blog/fake-cloudflare-interstitials) | `cloudflare-checkbox` |
 | Proofpoint | [Cybercriminals Abuse AI Website Creation App For Phishing](https://www.proofpoint.com/us/blog/threat-insight/cybercriminals-abuse-ai-website-creation-app-phishing) | `math-challenge` |
 | Proofpoint | [TA4922: The Suspected Chinese Crime Group is Going Global](https://www.proofpoint.com/us/blog/threat-insight/ta4922-suspected-chinese-crime-group-going-global) | `slide-to-verify` |
-| SANS ISC | [Nice Phishing Sample Delivering Trickbot](https://isc.sans.edu/diary/23641) | `terms-scroll` |
+| SANS ISC | [Nice Phishing Sample Delivering Trickbot](https://isc.sans.edu/diary/23641) | `terms-scroll`, `below-fold-reveal` |
 | SANS ISC | [Phishing Campaign with Blurred Images](https://isc.sans.edu/diary/21207) | `blurred-preview` |
 | Sophos X-Ops | [Scalable Vector Graphics files pose a novel phishing threat](https://www.sophos.com/blog/svg-phishing) | `cloudflare-checkbox` |
 | Volexity | [Multiple Russian Threat Actors Targeting Microsoft Device Code Authentication](https://www.volexity.com/blog/2025/02/13/multiple-russian-threat-actors-targeting-microsoft-device-code-authentication/) | `security-check` |
